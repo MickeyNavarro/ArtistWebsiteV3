@@ -9,10 +9,10 @@ import java.util.List;
 import com.model.Event;
 
 public interface EventBusinessInterface {
-	public List<Event> findAll(); 
-	public Event findById(int id); 
-	public boolean create(Event event); 
-	public boolean update(Event event); 
-	public boolean delete(Event event); 
+	public List<Event> findAllEvents(); 
+	public Event findEvent(int id); 
+	public boolean addEvent(Event event); 
+	public boolean editEvent(Event event); 
+	public boolean deleteEvent(int id); 
 }
 
