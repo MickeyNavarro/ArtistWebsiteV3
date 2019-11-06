@@ -26,13 +26,8 @@
 
 <body id="page-top" style="background-image: url(&quot;resources/ezgif.com-video-to-gif.gif&quot;); background-size: cover;">
     
-    <div style="margin-top: 100px; position:relative">
-	<c:if test ="${user.username != ''}"> 	
-		<h1>Welcome to the crew, ${user.username}!</h1>
-	</c:if>
-	<c:if test ="${user.username == ''}"> 	
+    <div style="padding: 150px; position:relative">	
 		<h1>Welcome to the site!</h1>
-	</c:if>
 	</div>
 
     <script src="/resources/assets/js/jquery.min.js"></script>

@@ -17,6 +17,7 @@
 body {
 	background-image: url('resources/ezgif.com-video-to-gif.gif');
 	background-size: cover;
+	padding: 150px;
 }
 </style>
 </head>
@@ -26,11 +27,11 @@ body {
 		<table> 
 			<tr>
 				<td><form:label path="username">Username:</form:label></td>
-				<td><form:input path="username"/><form:errors path="username"/></td>
+				<td><form:input path="username"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="password">Password:</form:label></td>
-				<td><form:password path="password"/><form:errors path="password"/></td>
+				<td><form:password path="password"/></td>
 			</tr>
 			<tr>
 				<td colspan="2"> 
@@ -40,7 +41,7 @@ body {
 							<td>
 				<p>Don't have an account? Sign up <a href="register">here</a></p>
 				</td>
-		<form:errors path="*"/>
+		<font color="red"><form:errors path="*"/></font>
 	</form:form>
 </body>
 </html>

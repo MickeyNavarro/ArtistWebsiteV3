@@ -17,6 +17,7 @@
 body {
 	background-image: url('resources/ezgif.com-video-to-gif.gif');
 	background-size: cover;
+	padding: 150px;
 }
 </style>
 </head>
@@ -56,7 +57,7 @@ body {
 				<td>
 				<p>Already have an account? Sign in <a href="login">here</a></p>
 				</td>
-		<form:errors path="*"/>
+		<font color= "red"><form:errors path="*"/></font>
 	</form:form>
 </body>
 </html>
