@@ -9,8 +9,8 @@ import java.util.List;
 
 import com.model.Event;
 
-public interface EventDataInterface<Event> {
-	public List<Event> findAll(); 
+public interface DataInterface<T> {
+	public List<T> findAll(); 
 	public Event findById(int id); 
 	public boolean create(Event event); 
 	public boolean update(Event event); 
