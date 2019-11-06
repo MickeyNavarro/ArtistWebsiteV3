@@ -4,31 +4,34 @@
 //User SpringBean 
 package com.business;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.data.DataAccessInterface;
 import com.model.User;
 
 public class UserBusinessService implements UserBusinessInterface {
-	//temporary console output when logging in
-	public void loginTest() {
-		System.out.println("loginTest() in UserBusinessService");
-	}
-	//temporary console output when registering
-	public void registerTest() {
-		System.out.println("registerTest() in UserBusinessService");
-	}
+	@SuppressWarnings("rawtypes")
+	@Autowired
+	DataAccessInterface dao;
+	
 	//create a new user
-	public boolean createUser(User user) {
-		return false;
+	@SuppressWarnings("unchecked")
+	public boolean register(User user) {
+		//returns if the user creation was successful
+		return dao.create(user);
 	}
-	//find user by username (used for login)
-	public User findByUsername(User user) {
-		return user;
+	//find user (used for login)
+	@SuppressWarnings("unchecked")
+	public User login(User user) {
+		//return the user found 
+		return (User)dao.read(user);
 	}
 	//update user info
-	public boolean update(int id, User user) {
+	public boolean editUser(int id, User user) {
 		return false;
 	}
 	//delete user
-	public boolean delete(int id) {
+	public boolean deleteUser(int id) {
 		return false;
 	}
 }
