@@ -6,13 +6,13 @@ package com.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.data.DataAccessInterface;
+import com.data.UserDataInterface;
 import com.model.User;
 
 public class UserBusinessService implements UserBusinessInterface {
 	@SuppressWarnings("rawtypes")
 	@Autowired
-	DataAccessInterface dao;
+	UserDataInterface dao;
 	
 	//create a new user
 	@SuppressWarnings("unchecked")

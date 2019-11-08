@@ -44,7 +44,7 @@ public class User {
 	@Size(min=3, max=30, message="Password must be between 3 and 30 characters.")
 	private String password;
 	
-	private String role; 
+	private int role; 
 		//if role = null, then the user would not be able to access admin functionalities
 		//if role = ADMIN, then the user would be able to access admin functionalities
 	
@@ -58,7 +58,7 @@ public class User {
 		this.email = "";
 		this.phoneNumber = "";
 		this.password = "";
-		this.role = null; 
+		this.role = 0; 
 	}
 
 	public User(int iD,
@@ -68,7 +68,7 @@ public class User {
 				@NotNull(message = "Email cannot be null.") @Pattern(regexp = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z.]{2,5}", message = "Email must be valid.") String email,
 				@NotNull(message = "Phone Number cannot be null.") @Size(min = 10, max = 10, message = "Phone Number must be a valid length of 10 characters.") String phoneNumber,
 				@NotNull(message = "Password cannot be null.") @Size(min = 3, max = 30, message = "Password must be between 3 and 30 characters.") String password,
-				String role) {
+				int role) {
 			super();
 			ID = iD;
 			this.firstName = firstName;
@@ -140,11 +140,11 @@ public class User {
 		this.password = password;
 	}
 
-	public String getRole() {
+	public int getRole() {
 		return role;
 	}
 
-	public void setRole(String role) {
+	public void setRole(int role) {
 		this.role = role;
 	}
 	

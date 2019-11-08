@@ -17,7 +17,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import com.model.User;
 
-public class UserDataService implements DataAccessInterface<User>{
+public class UserDataService implements UserDataInterface{
 	@SuppressWarnings("unused")
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
@@ -35,13 +35,13 @@ public class UserDataService implements DataAccessInterface<User>{
 	public boolean create(User user) {
 		//output statement for console
 		System.out.println("Entering UserDataService.create()");
-		String sql = "INSERT INTO user(firstName, lastName, username, email, phoneNumber, password, role) VALUES(?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO ArtistWeb.User(firstName, lastName, username, email, phoneNumber, password, role) VALUES(?, ?, ?, ?, ?, ?, 0)";
 
 		try {
 			//output statement for console
 			System.out.println("Entering UserDataService.create() with true");
 			//execute sql statement
-			int rows = jdbcTemplateObject.update(sql, user.getFirstName(), user.getLastName(), user.getUsername(), user.getEmail(), user.getPhoneNumber(), user.getPassword(), user.getRole());
+			int rows = jdbcTemplateObject.update(sql, user.getFirstName(), user.getLastName(), user.getUsername(), user.getEmail(), user.getPhoneNumber(), user.getPassword());
 			//return result
 			return rows == 1 ? true : false;
 		}
@@ -63,7 +63,7 @@ public class UserDataService implements DataAccessInterface<User>{
 			System.out.println("Entering UserDataService.read()");
 
 			User user = null;
-			String sql = "SELECT * FROM user WHERE BINARY username = ? AND password = ?";
+			String sql = "SELECT * FROM ArtistWeb.User WHERE BINARY username = ? AND password = ?";
 
 			try {
 				SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql, t.getUsername(), t.getPassword());
@@ -76,7 +76,7 @@ public class UserDataService implements DataAccessInterface<User>{
 					String email = srs.getString("email");
 					String phone = srs.getString("phoneNumber");
 					String password = srs.getString("password");
-					String role = srs.getString("role");
+					int role = srs.getInt("role");
 					user = new User(ID, firstName, lastName, username, email, phone, password, role);
 				}
 				else {System.out.println("Exit UserDataService.read() with false");};

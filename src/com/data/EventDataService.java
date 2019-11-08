@@ -18,7 +18,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import com.model.Event;
 
 
-public class EventDataService implements DataAccessInterface<Event>{
+public class EventDataService implements EventDataInterface{
 	
 	@SuppressWarnings("unused")
 	private DataSource dataSource; 
@@ -85,7 +85,8 @@ public class EventDataService implements DataAccessInterface<Event>{
 			//Execute SQL Query and loop over result set
 			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql); 
 			while(srs.next()) { 
-				events.add(new Event(0, srs.getString("name"), 
+				events.add(new Event(srs.getInt("ID"), 
+						srs.getString("name"), 
 						srs.getString("type"), 
 						srs.getString("location"), 
 						srs.getString("time"), 

@@ -8,13 +8,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.data.DataAccessInterface;
+import com.data.EventDataInterface;
 import com.model.Event;
 
 public class EventBusinessService implements EventBusinessInterface{
 	@SuppressWarnings("rawtypes")
 	@Autowired
-	DataAccessInterface dao; 
+	EventDataInterface dao; 
 
 	@SuppressWarnings("unchecked")
 	public List<Event> findAllEvents() {
