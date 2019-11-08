@@ -44,6 +44,7 @@ body {
 				<td><label>${event.location}</label></td>
 				<td><label>${event.time}</label></td>
 				<td><label>${event.date}</label></td>
+				
 			</tr>
 		</c:forEach>
 			<tr>
