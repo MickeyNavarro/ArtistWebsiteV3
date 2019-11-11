@@ -68,7 +68,7 @@ public class UserDataService implements UserDataInterface{
 			try {
 				SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql, t.getUsername(), t.getPassword());
 				if(srs.next()) {
-					System.out.println("Exit UserDataService.read() with true");
+					System.out.println("Exit UserDataService.read() with a User returned");
 					int ID = srs.getInt("ID");
 					String firstName = srs.getString("firstName");
 					String lastName = srs.getString("lastName");
@@ -79,7 +79,7 @@ public class UserDataService implements UserDataInterface{
 					int role = srs.getInt("role");
 					user = new User(ID, firstName, lastName, username, email, phone, password, role);
 				}
-				else {System.out.println("Exit UserDataService.read() with false");};
+				else {System.out.println("Exit UserDataService.read() with no User returned");};
 			}
 			catch (Exception e) {
 				e.printStackTrace();
