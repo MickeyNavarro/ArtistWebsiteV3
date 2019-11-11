@@ -27,9 +27,10 @@ public class UserDataService implements UserDataInterface{
 		//
 	}
 
-	/*
+	/**
 	 * Method to create a new user in the database (register)
-	 * Parameter: user
+	 * @param user
+	 * @return boolean
 	 */
 	@Override
 	public boolean create(User user) {
@@ -54,10 +55,12 @@ public class UserDataService implements UserDataInterface{
 		return true;
 	}
 	
-	/*
+	/**
 	 * Method to read a single user in the database (login)
-	 * Parameter: user
-	 */		@Override
+	 * @param user
+	 * @return user
+	 */		
+	@Override
 		public User read(User t) {
 			//output statement for console
 			System.out.println("Entering UserDataService.read()");
@@ -87,7 +90,11 @@ public class UserDataService implements UserDataInterface{
 			return user;
 		}		
 
-	 	//reads all users from the database
+	 	/**
+	 	 * Method that reads all users from the database
+	 	 * @param n/a
+	 	 * @return arraylist of users
+	 	 */
 	 	@Override
 		public List<User> readAll() {
 			// TODO Auto-generated method stub

@@ -30,18 +30,29 @@ public class UserController {
 	public void setUserService(UserBusinessInterface service) {
 	this.service = service;
 	}
-	//home page 
+	/**
+	 * This method will display the home page 
+	 * @return homePage
+	 */
 		@RequestMapping(path="/home", method=RequestMethod.GET)
 		public ModelAndView displayHomePage() { 
 			return new ModelAndView("homePage", "user", new User(0,"","","","","","", 0));
 			}
 	
-	//registration mechanisms
+	/**
+	 * This method will display the registrationPage
+	 * @return registrationPage
+	 */
 		@RequestMapping(path="/register", method = RequestMethod.GET) 
 		public ModelAndView displayRegistrationPage() { 
 			return new ModelAndView("registrationPage", "user", new User(0,"","","","","","", 0));
 			}
-		  
+	/**
+	 * This method will carry out the user registration by sending the validated user to the business service
+	 * @param user
+	 * @param result
+	 * @return loginPage, if the registration was successful; registrationPage with errors displayed, if unsuccessful
+	 */
 		@RequestMapping(path="/registerSuccess", method = RequestMethod.POST)
 		public ModelAndView registerUser(@Valid @ModelAttribute("user") User user, BindingResult result) { 
 			//Temporary 
@@ -59,13 +70,22 @@ public class UserController {
 			return new ModelAndView("registrationPage", "user", user); 
 		}
 		
-	//login mechanisms
+	/**
+	 * This method will display the loginPage
+	 * @return loginPage
+	 */
 		@RequestMapping(path="/login", method = RequestMethod.GET) 
 		public ModelAndView displayLoginPage() { 
 			return new ModelAndView("loginPage", "user", new User());
 			}
 		  
-
+	/**
+	 * This method will carry out the user login by sending the validated user to the business service & creating a session with the user object
+	 * @param user
+	 * @param result
+	 * @param session
+	 * @return homePage, if the registration was successful; loginPage with errors displayed, if unsuccessful
+	 */
 		@RequestMapping(path="/loginSuccess", method = RequestMethod.POST)
 		public ModelAndView loginUser(@ModelAttribute("user") User user, BindingResult result, HttpSession session) { 
 			//Temporary 
@@ -88,7 +108,11 @@ public class UserController {
 			return new ModelAndView("loginPage", "user", user); 
 		}
 		
-		//logout
+	/**
+	 * This method will carry out the user logout by destroying the session
+	 * @param session
+	 * @return homePage
+	 */
 		@RequestMapping(path="/logout", method = RequestMethod.GET) 
 		public ModelAndView logout(HttpSession session) {
 			//remove user attribute

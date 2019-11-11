@@ -33,14 +33,21 @@ public class EventController {
 		this.service = service;
 	}
 	
-	/*
-	 * Create event mechanisms
+	/**
+	 * This method will display the createEventPage
+	 * @return createEventPage 
 	 */
 	@RequestMapping(path="/createEvent", method = RequestMethod.GET) 
 	public ModelAndView displayEventCreationPage() { 
 		return new ModelAndView("createEventPage", "event", new Event(0,"","","","",""));
 	}
-			  
+		
+	/**
+	 * This method will carry out the event creation by sending the validated event to the business service
+	 * @param event
+	 * @param result
+	 * @return adminEventsPage, if the creation was successful; createEventPage with errors displayed, if unsuccessful
+	 */
 	@RequestMapping(path="/createEventSuccess", method = RequestMethod.POST)
 	public ModelAndView createEvent(@Valid @ModelAttribute("event") Event event, BindingResult result) { 
 		//validate the form 
@@ -73,8 +80,10 @@ public class EventController {
 		}
 	}
 	
-	/*
-	 * Update event mechanisms
+	/**
+	 * This method will display the updateEventPage
+	 * @param id of event
+	 * @return updateEventPage, if the connection was successful; errorPage with errors displayed, if unsuccessful
 	 */
 	@RequestMapping(path="/updateEvent", method = RequestMethod.POST) 
 	public ModelAndView displayEventUpdatePage(@RequestParam(name= "id") int id) { 
@@ -112,7 +121,13 @@ public class EventController {
 		}
 
 	}
-			  
+	
+	/**
+	 * This method will carry out the event update  by sending the validated event to the business service
+	 * @param event
+	 * @param result
+	 * @return adminEventsPage, if the update was successful; updateEventPage with errors displayed, if unsuccessful
+	 */
 	@RequestMapping(path="/updateEventSuccess", method = RequestMethod.POST)
 	public ModelAndView updateEvent(@Valid @ModelAttribute("event") Event event, BindingResult result) { 
 
@@ -146,9 +161,11 @@ public class EventController {
 		}
 	}
 	
-	/*
-	 * Delete event mechanisms
-	 */		  
+	/**
+	 * This method will carry out the event deletion by sending the event id to the business service	  
+	 * @param id
+	 * @return adminEventsPage, if the deletion was successful; errorPage with errors displayed, if unsuccessful
+	 */
 	@RequestMapping(path="/deleteEvent", method = RequestMethod.POST)
 	public ModelAndView deleteEvent(@RequestParam(name= "id") int id) { 
 		//call the order business service to update the event & check if successful
