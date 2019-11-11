@@ -24,8 +24,8 @@ public class EventBusinessService implements EventBusinessInterface{
 
 	@Override
 	public Event findEvent(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		//returns an event found in the database by its id
+		return dao.readById(id);
 	}
 
 	@SuppressWarnings("unchecked")

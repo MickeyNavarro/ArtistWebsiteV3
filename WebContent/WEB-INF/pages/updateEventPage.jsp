@@ -26,6 +26,7 @@ body {
 	<h2>Update Event</h2>
 	<form:form method= "POST" modelAttribute="event" action="updateEventSuccess">
 		<table> 
+				<td><form:input path = "ID" type = "hidden" value = "${event.ID}"></form:input></td>
 			<tr>
 				<td><form:label path="name">Event Name:</form:label></td>
 				<td><form:input path="name" value = "${event.name}"/><form:errors path="name"/></td>

@@ -70,6 +70,42 @@ public class EventDataService implements EventDataInterface{
 	}
 	
 	/*
+	 * Method to read a single event in the database by its id
+	 * Parameter: event
+	 */
+	@Override
+	public Event readById(int id) {
+		String sql = "SELECT * FROM ArtistWeb.Event WHERE ID = ?"; 
+		
+		//initialize an event to be used to return with data later
+		Event event = null; 
+		
+		try { 
+			//output statement for console
+			System.out.println("Successful connection!");
+			
+			//Execute SQL Query and check if an Event was returned
+			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql, id); 
+			if(srs.next()) { 
+				event = new Event(id,
+						srs.getString("name"), 
+						srs.getString("type"), 
+						srs.getString("location"), 
+						srs.getString("time"), 
+						srs.getString("date")); 
+
+			}
+			
+		}
+		catch (Exception e) { 
+			//output statement for console
+			System.out.println("Failed connection!");
+			e.printStackTrace();
+		}
+		return event; 
+	}
+	
+	/*
 	 * Method to read all events in the database 
 	 * Parameter: n/a
 	 */
@@ -111,6 +147,7 @@ public class EventDataService implements EventDataInterface{
 	public boolean update(Event event) {
 		String sql = "UPDATE ArtistWeb.Event SET name = ?, type =?, location = ?, time = ?, date = ? WHERE ID = ?";
 
+		System.out.println(event.getID());
 		try { 
 			//output statement for console
 			System.out.println("Successful connection!");
@@ -141,7 +178,7 @@ public class EventDataService implements EventDataInterface{
 	 */
 	@Override
 	public boolean delete(int id) {
-		String sql = "DELETE FROM ArtistWeb.Event WHERE WHERE ID = ?";
+		String sql = "DELETE FROM ArtistWeb.Event WHERE ID = ?";
 		
 		try { 
 			//output statement for console

@@ -44,7 +44,8 @@ body {
 				<td><label>${event.location}</label></td>
 				<td><label>${event.time}</label></td>
 				<td><label>${event.date}</label></td>
-				
+				<td><form action = updateEvent method = 'POST'><input type = 'hidden' name = 'id' value = '${event.ID}'><input type = 'submit' value = 'Edit'></form> </td>
+				<td><form action = deleteEvent method = 'POST'><input type = 'hidden' name = 'id' value = '${event.ID}'><input type = 'submit' value = 'Delete'></form> </td>	
 			</tr>
 		</c:forEach>
 			<tr>
