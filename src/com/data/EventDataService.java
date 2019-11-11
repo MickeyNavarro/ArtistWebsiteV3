@@ -30,9 +30,10 @@ public class EventDataService implements EventDataInterface{
 	public EventDataService() { 
 	}
 	
-	/*
+	/**
 	 * Method to create a new event in the database 
-	 * Parameter: event
+	 * @param event
+	 * @return boolean
 	 */
 	@Override
 	public boolean create(Event event) {
@@ -59,9 +60,10 @@ public class EventDataService implements EventDataInterface{
 		return false;
 	}
 	
-	/*
+	/**
 	 * Method to read a single event in the database 
-	 * Parameter: event
+	 * @param event
+	 * @return event
 	 */
 	@Override
 	public Event read(Event event) {
@@ -69,9 +71,10 @@ public class EventDataService implements EventDataInterface{
 		return null;
 	}
 	
-	/*
+	/**
 	 * Method to read a single event in the database by its id
-	 * Parameter: event
+	 * @param id of an event
+	 * @return event
 	 */
 	@Override
 	public Event readById(int id) {
@@ -105,9 +108,10 @@ public class EventDataService implements EventDataInterface{
 		return event; 
 	}
 	
-	/*
+	/**
 	 * Method to read all events in the database 
-	 * Parameter: n/a
+	 * @param n/a
+	 * @return array of events
 	 */
 	@Override
 	public List<Event> readAll() {
@@ -139,9 +143,10 @@ public class EventDataService implements EventDataInterface{
 		return events; 
 	}
 
-	/*
+	/**
 	 * Method to update an event in the database 
-	 * Parameter: event
+	 * @param event
+	 * @return boolean
 	 */
 	@Override
 	public boolean update(Event event) {
@@ -172,9 +177,10 @@ public class EventDataService implements EventDataInterface{
 		return false;
 	}
 	
-	/*
+	/**
 	 * Method to delete an event in the database 
-	 * Parameter: id of an event
+	 * @param id of an event
+	 * @return boolean
 	 */
 	@Override
 	public boolean delete(int id) {
@@ -198,9 +204,10 @@ public class EventDataService implements EventDataInterface{
 		return false;
 	}
 	
-	/*
+	/**
 	 * Method to set the data source for use in the spring bean
-	 * Parameter: dataSource
+	 * @param dataSource
+	 * @return void
 	 */
 	public void setDataSource(DataSource dataSource) { 
 		this.dataSource = dataSource; 
