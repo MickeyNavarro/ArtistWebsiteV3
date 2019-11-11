@@ -38,6 +38,14 @@ public class UserController {
 		public ModelAndView displayHomePage() { 
 			return new ModelAndView("homePage", "user", new User(0,"","","","","","", 0));
 			}
+	/**
+	 * This method will display the about page 
+	 * @return aboutPage
+	 */
+		@RequestMapping(path="/about", method=RequestMethod.GET)
+		public ModelAndView displayAboutPage() { 
+			return new ModelAndView("aboutPage", "user", new User(0,"","","","","","", 0));
+			}
 	
 	/**
 	 * This method will display the registrationPage
