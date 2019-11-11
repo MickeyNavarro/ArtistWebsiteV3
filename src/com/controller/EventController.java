@@ -34,6 +34,17 @@ public class EventController {
 	}
 	
 	/**
+	 * This method will display the events page
+	 * @return adminEventsPage 
+	 */
+	@RequestMapping(path="/events", method=RequestMethod.GET)
+	public ModelAndView displayEvents() { 
+		//call the order business service to return a list of events
+		List<Event> events = service.findAllEvents(); 
+		return new ModelAndView("adminEventsPage", "events", events);
+		}
+	
+	/**
 	 * This method will display the createEventPage
 	 * @return createEventPage 
 	 */
