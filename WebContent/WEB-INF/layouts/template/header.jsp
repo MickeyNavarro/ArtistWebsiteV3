@@ -7,14 +7,13 @@
                 aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Merch</a></li>
-                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">About</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="events">Events</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="about">About</a></li>
                 </ul>
             </div>
                 
             <c:choose>
             <c:when test ="${sessionScope.user != null}"> 	
-            	<li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="createEvent">Add Event</a></li>
                 <a class="js-scroll-trigger">Welcome ${user.username}<a href="logout">&nbsp; &nbsp; &nbsp;Logout&nbsp;<i class=""></i>&nbsp;</a></a>
 			</c:when>
    	
@@ -24,5 +23,4 @@
            	</c:choose>
             </div>
     </nav>
-    
  
