@@ -50,6 +50,7 @@ body {
 			<tr>
 				<td colspan="2"> 
 					<input type = "submit" value = "Submit"/>
+					<a href="events">Cancel</a>
 				</td>
 			</table>
 	<font color="red"><p>${error}</p></font>
