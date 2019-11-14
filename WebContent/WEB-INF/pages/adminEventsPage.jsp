@@ -20,6 +20,7 @@
 body {
 	background-image: url('resources/ezgif.com-video-to-gif.gif');
 	background-size: cover;
+	padding: 150px;
 }
 </style>
 
@@ -28,6 +29,7 @@ body {
 
 <h1>Admin Events Page</h1>
 <h2>List of Events</h2>
+	<a href="createEvent">Add Event</a>
 		<table> 
 			<tr>
 				<th><label>Event Name</label></th>
@@ -43,13 +45,10 @@ body {
 				<td><label>${event.location}</label></td>
 				<td><label>${event.time}</label></td>
 				<td><label>${event.date}</label></td>
+				<td><form action = updateEvent method = 'POST'><input type = 'hidden' name = 'id' value = '${event.ID}'><input type = 'submit' value = 'Edit'></form> </td>
+				<td><form action = deleteEvent method = 'POST'><input type = 'hidden' name = 'id' value = '${event.ID}'><input type = 'submit' value = 'Delete'></form> </td>	
 			</tr>
 		</c:forEach>
-			<tr>
-				<td colspan="2"> 
-					<a href="createEvent">Create New Event</a>
-				</td>
-			</tr>
 		</table>
 </body>
 </html>

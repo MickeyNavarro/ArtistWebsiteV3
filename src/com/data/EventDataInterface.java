@@ -1,19 +1,16 @@
 //Almicke Navarro and Emily Quevedo
 //CST-341
-//October 26, 2019
-//Event Data Interface class that will be implemented in the Event SpringBean
-
+//November 7, 2019
+//Event Data Interface class that will be implemented in the Event Data Service
 package com.data;
-
-import java.util.List;
 
 import com.model.Event;
 
-public interface EventDataInterface<Event> {
-	public List<Event> findAll(); 
-	public Event findById(int id); 
-	public boolean create(Event event); 
-	public boolean update(Event event); 
-	public boolean delete(Event event); 
-
+public interface EventDataInterface extends DataAccessInterface<Event> {
+	/**
+	 * Method to get an event in the database by its id
+	 * @param id
+	 * @return event
+	 */
+	public Event readById(int id); 
 }

@@ -18,6 +18,7 @@
 body {
 	background-image: url('resources/ezgif.com-video-to-gif.gif');
 	background-size: cover;
+	padding: 150px;
 }
 </style>
 </head>
@@ -48,6 +49,7 @@ body {
 			<tr>
 				<td colspan="2"> 
 					<input type = "submit" value = "Submit"/>
+					<a href="events">Cancel</a>
 				</td>
 			</table>
 	<font color="red"><p>${error}</p></font>

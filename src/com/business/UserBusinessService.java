@@ -1,34 +1,63 @@
 //Almicke Navarro and Emily Quevedo
 //CST-341
 //October 11, 2019
-//User SpringBean 
+
+//BUSINESS SERVICE 
+//this is the user business service; this will deal with any CRUD operations by sending the parameters to the data service 
 package com.business;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.data.UserDataInterface;
 import com.model.User;
 
 public class UserBusinessService implements UserBusinessInterface {
-	//temporary console output when logging in
-	public void loginTest() {
-		System.out.println("loginTest() in UserBusinessService");
-	}
-	//temporary console output when registering
-	public void registerTest() {
-		System.out.println("registerTest() in UserBusinessService");
-	}
+	@SuppressWarnings("rawtypes")
+	@Autowired
+	UserDataInterface dao;
+	
+	/**
+	 * business method to ask the data service to create a user in the database
+	 * @param user 
+	 * @return true, if successful; false, if unsuccessful
+	 */
 	//create a new user
-	public boolean createUser(User user) {
-		return false;
+	@SuppressWarnings("unchecked")
+	public boolean register(User user) {
+		//returns if the user creation was successful
+		return dao.create(user);
 	}
-	//find user by username (used for login)
-	public User findByUsername(User user) {
-		return user;
+	
+	/**
+	 * business method to ask the data service to find a user in the database
+	 * @param user 
+	 * @return user
+	 */
+	//find user (used for login)
+	@SuppressWarnings("unchecked")
+	public User login(User user) {
+		//return the user found 
+		return (User)dao.read(user);
 	}
+	
+	/**
+	 * business method to ask the data service to edit a user in the database
+	 * @param user id
+	 * @param user
+	 * @return true, if successful; false, if unsuccessful
+	 */
 	//update user info
-	public boolean update(int id, User user) {
+	public boolean editUser(int id, User user) {
 		return false;
 	}
+	
+	/**
+	 * business method to ask the data service to delete a user in the database
+	 * @param user id
+	 * @return true, if successful; false, if unsuccessful
+	 */
 	//delete user
-	public boolean delete(int id) {
+	public boolean deleteUser(int id) {
 		return false;
 	}
 }
