@@ -16,22 +16,46 @@ public class UserBusinessService implements UserBusinessInterface {
 	@Autowired
 	UserDataInterface dao;
 	
+	/**
+	 * business method to ask the data service to create a user in the database
+	 * @param user 
+	 * @return true, if successful; false, if unsuccessful
+	 */
 	//create a new user
 	@SuppressWarnings("unchecked")
 	public boolean register(User user) {
 		//returns if the user creation was successful
 		return dao.create(user);
 	}
+	
+	/**
+	 * business method to ask the data service to find a user in the database
+	 * @param user 
+	 * @return user
+	 */
 	//find user (used for login)
 	@SuppressWarnings("unchecked")
 	public User login(User user) {
 		//return the user found 
 		return (User)dao.read(user);
 	}
+	
+	/**
+	 * business method to ask the data service to edit a user in the database
+	 * @param user id
+	 * @param user
+	 * @return true, if successful; false, if unsuccessful
+	 */
 	//update user info
 	public boolean editUser(int id, User user) {
 		return false;
 	}
+	
+	/**
+	 * business method to ask the data service to delete a user in the database
+	 * @param user id
+	 * @return true, if successful; false, if unsuccessful
+	 */
 	//delete user
 	public boolean deleteUser(int id) {
 		return false;

@@ -33,7 +33,7 @@ public class EventDataService implements EventDataInterface{
 	/**
 	 * Method to create a new event in the database 
 	 * @param event
-	 * @return boolean
+	 * @return true, if successful; false, if unsuccessful
 	 */
 	@Override
 	public boolean create(Event event) {
@@ -116,6 +116,8 @@ public class EventDataService implements EventDataInterface{
 	@Override
 	public List<Event> readAll() {
 		String sql = "SELECT * FROM ArtistWeb.Event"; 
+		
+		//initialize a list of events to be used to return with data later
 		List<Event> events = new ArrayList<Event>(); 
 		
 		try { 
@@ -146,13 +148,12 @@ public class EventDataService implements EventDataInterface{
 	/**
 	 * Method to update an event in the database 
 	 * @param event
-	 * @return boolean
+	 * @return true, if successful; false, if unsuccessful
 	 */
 	@Override
 	public boolean update(Event event) {
 		String sql = "UPDATE ArtistWeb.Event SET name = ?, type =?, location = ?, time = ?, date = ? WHERE ID = ?";
 
-		System.out.println(event.getID());
 		try { 
 			//output statement for console
 			System.out.println("Successful connection!");
@@ -180,7 +181,7 @@ public class EventDataService implements EventDataInterface{
 	/**
 	 * Method to delete an event in the database 
 	 * @param id of an event
-	 * @return boolean
+	 * @return true, if successful; false, if unsuccessful
 	 */
 	@Override
 	public boolean delete(int id) {

@@ -27,6 +27,11 @@ public class UserController {
 	//SpringBean declaration
 	UserBusinessInterface service;
 	
+	/**
+	 * Method to set the bean
+	 * @param service
+	 */
+	
 	public void setUserService(UserBusinessInterface service) {
 	this.service = service;
 	}

@@ -17,30 +17,54 @@ public class EventBusinessService implements EventBusinessInterface{
 	@Autowired
 	EventDataInterface dao; 
 
+	/**
+	 * business method to ask the data service to get all the events from the database
+	 * @return arraylist of events
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Event> findAllEvents() {
 		//returns all orders from the database
 		return dao.readAll();
 	}
 
+	/**
+	 * business method to ask the data service to find a single event from the database by its id 
+	 * @param event id
+	 * @return event
+	 */
 	@Override
 	public Event findEvent(int id) {
 		//returns an event found in the database by its id
 		return dao.readById(id);
 	}
 
+	/**
+	 * business method to ask the data service to create an event in the database
+	 * @param event 
+	 * @return true, if successful; false, if unsuccessful
+	 */
 	@SuppressWarnings("unchecked")
 	public boolean addEvent(Event event) {
 		//returns if the event creation was successful
 		return dao.create(event); 
 	}
 
+	/**
+	 * business method to ask the data service to edit an event in the database
+	 * @param event 
+	 * @return true, if successful; false, if unsuccessful
+	 */
 	@SuppressWarnings("unchecked")
 	public boolean editEvent(Event event) {
 		//returns if the event update was successful
 		return dao.update(event);
 	}
 
+	/**
+	 * business method to ask the data service to delete an event in the database
+	 * @param event id 
+	 * @return true, if successful; false, if unsuccessful
+	 */
 	@SuppressWarnings("unchecked")
 	public boolean deleteEvent(int id) {
 		//returns if the event deletion was successful
