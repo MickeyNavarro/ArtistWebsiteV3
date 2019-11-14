@@ -29,6 +29,7 @@ body {
 
 <h1>Admin Events Page</h1>
 <h2>List of Events</h2>
+	<a href="createEvent">Add Event</a>
 		<table> 
 			<tr>
 				<th><label>Event Name</label></th>
@@ -48,11 +49,6 @@ body {
 				<td><form action = deleteEvent method = 'POST'><input type = 'hidden' name = 'id' value = '${event.ID}'><input type = 'submit' value = 'Delete'></form> </td>	
 			</tr>
 		</c:forEach>
-			<tr>
-				<td colspan="2"> 
-					<a href="createEvent">Create New Event</a>
-				</td>
-			</tr>
 		</table>
 </body>
 </html>

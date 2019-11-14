@@ -15,7 +15,6 @@
                 
             <c:choose>
             <c:when test ="${sessionScope.user != null}"> 	
-            	<li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="createEvent">Add Event</a></li>
                 <a class="js-scroll-trigger">Welcome ${user.username}<a href="logout">&nbsp; &nbsp; &nbsp;Logout&nbsp;<i class=""></i>&nbsp;</a></a>
 			</c:when>
    	
@@ -25,5 +24,4 @@
            	</c:choose>
             </div>
     </nav>
-    
  
