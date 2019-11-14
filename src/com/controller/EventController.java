@@ -29,6 +29,10 @@ public class EventController {
 	//SpringBean declaration
 	EventBusinessInterface service;
 	
+	/**
+	 * Method to set the bean 
+	 * @param service
+	 */
 	public void setEventService(EventBusinessInterface service) {
 		this.service = service;
 	}

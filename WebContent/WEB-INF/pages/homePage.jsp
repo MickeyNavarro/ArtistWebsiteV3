@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="/resources/assets/css/Login-Form-Dark.css">
 </head>
 
-<body id="page-top" style="background-image: url(&quot;resources/ezgif.com-video-to-gif.gif&quot;); background-size: cover;">
+<body id="page-top" style="background-image: url(&quot;resources/starsBackground.gif&quot;); background-size: cover;">
     
     <div style="padding: 150px; position:relative">	
 		<h1>Welcome to the site!</h1>
@@ -34,6 +34,9 @@
     <script src="/resources/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="/resources/assets/js/grayscale.js"></script>
+    
+    
+    <div class='embedsocial-instagram' data-ref="56ececb3017f83dc16a6fcdcd96a75a6bd7a5820"></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/embedscript/in.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialInstagramScript"));</script>
 </body>
 
 </html>

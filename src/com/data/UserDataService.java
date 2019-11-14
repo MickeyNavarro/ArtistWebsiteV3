@@ -65,7 +65,9 @@ public class UserDataService implements UserDataInterface{
 			//output statement for console
 			System.out.println("Entering UserDataService.read()");
 
+			//initialize a user to be used to return the data later
 			User user = null;
+			
 			String sql = "SELECT * FROM ArtistWeb.User WHERE BINARY username = ? AND password = ?";
 
 			try {
@@ -92,7 +94,6 @@ public class UserDataService implements UserDataInterface{
 
 	 	/**
 	 	 * Method that reads all users from the database
-	 	 * @param n/a
 	 	 * @return arraylist of users
 	 	 */
 	 	@Override
@@ -102,6 +103,11 @@ public class UserDataService implements UserDataInterface{
 			return users;
 		}
 	 
+	 	/**
+		 * Method to update a user in the database 
+		 * @param user
+		 * @return true, if successful; false, if unsuccessful
+		 */
 		//updates user
 		@Override
 		public boolean update(User t) {
@@ -109,6 +115,11 @@ public class UserDataService implements UserDataInterface{
 			return false;
 		}
 
+		/**
+		 * Method to delete a user in the database 
+		 * @param id 
+		 * @return true, if successful; false, if unsuccessful
+		 */
 		//deletes user
 		@Override
 		public boolean delete(int id) {
@@ -116,6 +127,10 @@ public class UserDataService implements UserDataInterface{
 			return false;
 		}
 		
+		/**
+		 * Method to set the bean
+		 * @param dataSource
+		 */
 		//IoC helper function
 		//Spring Data Source to inject into DAO
 		public void setDataSource(DataSource dataSource) {
