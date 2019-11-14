@@ -22,6 +22,10 @@ import com.model.Event;
 public class RestService {
 		EventBusinessInterface service;
 		
+		/**
+		 * Method to use the business service to get all the events from the database
+		 * @return array of events
+		 */
 		@GetMapping("/events")
 		public List<Event> getEvents() {
 
@@ -31,6 +35,10 @@ public class RestService {
 			return events;
 		}
 		
+		/**
+		 * Method to set spring bean
+		 * @param service
+		 */
 		@Autowired
 		public void setUserService(EventBusinessInterface service) {
 			this.service = service;

@@ -18,8 +18,7 @@
 	<title>Admin Events Page</title>
 <style>
 body {
-	background-image: url('resources/ezgif.com-video-to-gif.gif');
-	background-size: cover;
+	background-image: url('resources/stars.gif');
 	padding: 150px;
 }
 </style>

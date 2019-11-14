@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="/resources/assets/css/Login-Form-Dark.css">
 </head>
 
-<body id="page-top" style="background-image: url(&quot;resources/starsBackground.gif&quot;); background-size: cover;">
+<body id="page-top" style="background-image: url(&quot;resources/stars.gif&quot;);">
     
     <div style="padding: 150px; position:relative">	
 		<h1>Welcome to the site!</h1>
