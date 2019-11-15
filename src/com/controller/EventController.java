@@ -206,7 +206,10 @@ public class EventController {
 	}
 	
 	
-	/*
+	/**
+	 * This method will display the adminEventsPage
+	 * @return adminEventsPage
+	 */
 	@RequestMapping(path="/events", method = RequestMethod.POST)
 	public ModelAndView showEvents() { 
 				
@@ -219,6 +222,6 @@ public class EventController {
 				return new ModelAndView("adminEventsPage", "events", events); 
 		
 	}
-	*/
+	
 
 }

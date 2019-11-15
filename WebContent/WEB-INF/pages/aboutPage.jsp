@@ -28,6 +28,21 @@
     
     <div style="padding: 150px; position:relative">	
 		<h1>We Are RGOCrew!</h1>
+		<div class = "card-deck">
+            	<div class="card text-white bg-dark mb-3" style="width: 25rem;" >
+            		<div class="card-body">
+            		<img class="card-img-top" src="resources/jasn.JPG" alt="Card image cap">
+            			<h3 class="card-title">JASN</h3>
+            			<p class="card-text">JASN is a Korean rapper and the de facto leader of RGOCREW. JASN started out as an audio engineer and music producer in California, engineering for studios such as Firehouse Recording Studios and Studio City Sound. He discovered his love for Korean Hip Hop when he came across a song titled “111%” by Korean rapper Dok2. Since then, JASN has been creating music with the goal of getting signed by a record label in Korea. JASN released his debut EP “...And the Argonauts” in July, 2019. He is currently working at his studio in Chandler, Arizona.</p>            		
+            	</div>
+    	</div>
+            	<div class="card text-white bg-dark mb-3" style="width: 25rem;">
+            		<div class="card-body">
+            		<img class="card-img-top" src="resources/gundy.JPG" alt="Card image cap">
+            			<h3 class="card-title">GUNDY</h3>
+            			<p class="card-text">Bio coming soon.</p>            		
+              		</div>
+    	</div>
 	</div>
 
     <script src="/resources/assets/js/jquery.min.js"></script>
