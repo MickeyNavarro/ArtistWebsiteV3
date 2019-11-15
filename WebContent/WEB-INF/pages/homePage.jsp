@@ -35,8 +35,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="/resources/assets/js/grayscale.js"></script>
     
+    <div style="padding: 150px; position:relative">	
     
-    <div class='embedsocial-instagram' data-ref="56ececb3017f83dc16a6fcdcd96a75a6bd7a5820"></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/embedscript/in.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialInstagramScript"));</script>
+		<div class = "card-deck">
+	            	<div class="card text-white bg-dark mb-3" style="width: 15rem;" >
+	            		<div class="card-body">
+	            			<h3 class="card-title">SPOTIFY</h3>
+	   					 	<iframe src="https://open.spotify.com/embed/album/5soA01GVZxM5t3Oh4IOWtU" width="80%" height="500" margin="15" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+	            	</div>
+	    			</div>
+	    				    		<div class="card text-white bg-dark mb-3" style="width: 15rem;" >
+	            		<div class="card-body">
+	            			<h3 class="card-title">APPLE MUSIC</h3>
+	   					 	<iframe allow="autoplay *; encrypted-media *;" frameborder="0" width="80%" height="500" margin="15" style="max-width:660px;overflow:hidden;background:transparent;margin:15px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/and-the-argonauts-ep/1473397136"></iframe>
+	            </div>
+	            </div>
+	            	
+
+    </div>
+    <div class="card text-white bg-dark mb-3" style="width: 60rem;">
+	            		<div class="card-body">
+	            			<h3 class="card-title">INSTAGRAM</h3>
+	    					<div class='embedsocial-instagram' data-ref="56ececb3017f83dc16a6fcdcd96a75a6bd7a5820"></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/embedscript/in.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialInstagramScript"));</script>
+	              		</div>
+	    			</div>
 </body>
 
 </html>
