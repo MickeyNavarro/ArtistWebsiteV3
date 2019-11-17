@@ -8,6 +8,10 @@
 
 <head>
 <title>RGO Crew</title>
+	 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
 	<spring:url value="/resources/assets/bootstrap/css/bootstrap.min.css" var="mainCss" />
 	<spring:url value="/resources/assets/bootstrap/js/bootstrap.min.js" var="mainJs" />
 
