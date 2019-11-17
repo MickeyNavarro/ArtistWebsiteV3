@@ -52,7 +52,7 @@ table.dataTable tbody tr, table.dataTable.display tbody tr.even>.sorting_1, tabl
 
 </style>
 <body>	
-	<c:if test="${sessionScope.user.username == 'EmilyQ'}">
+	<c:if test="${sessionScope.user.username == 'admin'}">
 	<a href="adminEvents">Admin</a>
 	</c:if>
 	
