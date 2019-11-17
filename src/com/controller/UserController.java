@@ -41,7 +41,7 @@ public class UserController {
 	 */
 		@RequestMapping(path="/home", method=RequestMethod.GET)
 		public ModelAndView displayHomePage() { 
-			return new ModelAndView("homePage", "user", new User(0,"","","","","","", 0));
+			return new ModelAndView("homePage");
 			}
 	/**
 	 * This method will display the about page 
@@ -49,7 +49,7 @@ public class UserController {
 	 */
 		@RequestMapping(path="/about", method=RequestMethod.GET)
 		public ModelAndView displayAboutPage() { 
-			return new ModelAndView("aboutPage", "user", new User(0,"","","","","","", 0));
+			return new ModelAndView("aboutPage");
 			}
 	
 	/**
