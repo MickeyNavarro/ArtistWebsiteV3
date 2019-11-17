@@ -39,14 +39,25 @@ public class EventController {
 	
 	/**
 	 * This method will display the events page
-	 * @return adminEventsPage 
+	 * @return eventsPage 
 	 */
 	@RequestMapping(path="/events", method=RequestMethod.GET)
 	public ModelAndView displayEvents() { 
 		//call the order business service to return a list of events
 		List<Event> events = service.findAllEvents(); 
+		return new ModelAndView("eventsPage", "events", events);
+	}
+	
+	/**
+	 * This method will display the admin events page
+	 * @return adminEventsPage 
+	 */
+	@RequestMapping(path="/adminEvents", method=RequestMethod.GET)
+	public ModelAndView displayAdminEvents() { 
+		//call the order business service to return a list of events
+		List<Event> events = service.findAllEvents(); 
 		return new ModelAndView("adminEventsPage", "events", events);
-		}
+	}
 	
 	/**
 	 * This method will display the createEventPage
@@ -204,24 +215,4 @@ public class EventController {
 			return mv; 
 		}
 	}
-	
-	
-	/**
-	 * This method will display the adminEventsPage
-	 * @return adminEventsPage
-	 */
-	@RequestMapping(path="/events", method = RequestMethod.POST)
-	public ModelAndView showEvents() { 
-				
-				
-			//call the order business service to return a list of events
-			List<Event> events = service.findAllEvents(); 
-					
-			//return to the admin events page to show that event update was successful
-				//no admin modules have been create yet so it will return to an temp. admin events page 
-				return new ModelAndView("adminEventsPage", "events", events); 
-		
-	}
-	
-
 }
