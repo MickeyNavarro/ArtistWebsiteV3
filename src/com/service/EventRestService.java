@@ -40,7 +40,7 @@ public class RestService {
 		 * @param service
 		 */
 		@Autowired
-		public void setUserService(EventBusinessInterface service) {
+		public void setEventService(EventBusinessInterface service) {
 			this.service = service;
 		}
 }
