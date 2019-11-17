@@ -27,7 +27,7 @@
 <body id="page-top" style="background-image: url(&quot;resources/stars.gif&quot;);">
     
     <div style="padding: 150px; position:relative">	
-		<h1>Welcome to the site!</h1>
+		<h1>Watch our latest video</h1>
 		
 	<iframe width="75%" height="400" src="https://www.youtube.com/embed/8k1M29QKmUw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		
