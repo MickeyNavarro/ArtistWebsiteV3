@@ -22,8 +22,8 @@ public class UserRestService {
 		@GetMapping("/users")
 		public List<User> getUsers() {
 
-			List<User> users = service.findAllUsers();
-			
+			//List<User> users = service.findAllUsers();
+			List<User> users = null; 
 			//returns a list of users
 			return users;
 		}

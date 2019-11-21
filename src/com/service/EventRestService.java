@@ -19,7 +19,7 @@ import com.model.Event;
 
 @RestController
 @RequestMapping("/service")
-public class RestService {
+public class EventRestService {
 		EventBusinessInterface service;
 		
 		/**

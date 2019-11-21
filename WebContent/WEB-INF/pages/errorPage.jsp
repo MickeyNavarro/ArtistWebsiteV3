@@ -18,6 +18,7 @@
 body {
 	background-image: url('resources/stars.gif');
 	padding: 150px;
+	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
 }
 </style>
 </head>
