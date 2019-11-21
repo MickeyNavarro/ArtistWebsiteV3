@@ -28,7 +28,6 @@
 body {
 	background-image: url('resources/stars.gif');
 	padding: 150px;
-	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
 }
 
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
@@ -53,14 +52,10 @@ table.dataTable tbody tr, table.dataTable.display tbody tr.even>.sorting_1, tabl
 
 </style>
 <body>	
-	<h1>Come See Us On Tour!</h1>
-	<img src="resources/poster2.jpg" alt="Tour Poster" width="550" height="400" style="padding-bottom: 25px">
-
 	<c:if test="${sessionScope.user.username == 'admin'}">
 	<a href="adminEvents">Admin</a>
 	</c:if>
 	
-	<h1>Our Events</h1>
 	<table id="events" style="width:50%; background-color: black" border="1" class="display">
 		<thead>
 			<tr  style="font-color: white">
