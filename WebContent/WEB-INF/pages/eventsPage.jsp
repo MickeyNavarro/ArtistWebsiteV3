@@ -52,10 +52,14 @@ table.dataTable tbody tr, table.dataTable.display tbody tr.even>.sorting_1, tabl
 
 </style>
 <body>	
+	<h1>Come See Us On Tour!</h1>
+	<img src="resources/poster2.jpg" alt="Tour Poster" width="550" height="400" style="padding-bottom: 25px">
+
 	<c:if test="${sessionScope.user.username == 'admin'}">
 	<a href="adminEvents">Admin</a>
 	</c:if>
 	
+	<h1>Our Events</h1>
 	<table id="events" style="width:50%; background-color: black" border="1" class="display">
 		<thead>
 			<tr  style="font-color: white">
