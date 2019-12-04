@@ -8,15 +8,17 @@
 		$.ajax(
 		{
 			type: "GET",
-			url: "/ArtistWebsiteV3/service/events", dataType: "json", success: function(data) {
+			url: "/WebsiteV4/service/events", dataType: "json", success: function(data) {
 				$('#events').dataTable({
+					"responsive":true,
 					"data": data,
-					"columns": [{"data": "name"}, {"data": "type"}, {"data": "location"}, {"data": "time"}, {"data": "date"}, ]
+					"columns": [{"data": "name"}, {"data": "type"}, {"data": "location"}, {"data": "time"}, {"data": "date"}, {
+		                "defaultContent": "<button>Buy</button>"}] 
 				});
 			},
 		error: function(xhr, ajaxOptions, thrownError) 
 			{
-				alert(xhr.status);
+				alert(xhr.status); 
 				alert(thrownError);
 			}
 		});
@@ -27,12 +29,15 @@
 <style>
 body {
 	background-image: url('resources/stars.gif');
-	padding: 150px;
-	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
+	padding-top: 150px;
+	color: white;
+cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
 }
 
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
 	color: white;
+	padding-left: 75px;
+	padding-right: 75px;
 }
 
 table.dataTable.display tbody tr.odd, table.dataTable.display tbody tr.odd>.sorting_1 {
@@ -51,15 +56,12 @@ table.dataTable tbody tr, table.dataTable.display tbody tr.even>.sorting_1, tabl
 	background-color: black;
 }
 
+table.dataTable.display tbody tr:hover {
+	background-color: black;
+}
+
 </style>
 <body>	
-	<h1>Come See Us On Tour!</h1>
-	<img src="resources/poster2.jpg" alt="Tour Poster" width="550" height="400" style="padding-bottom: 25px">
-
-	<c:if test="${sessionScope.user.username == 'admin'}">
-	<a href="adminEvents">Admin</a>
-	</c:if>
-	
 	<h1>Our Events</h1>
 	<table id="events" style="width:50%; background-color: black" border="1" class="display">
 		<thead>
@@ -69,6 +71,7 @@ table.dataTable tbody tr, table.dataTable.display tbody tr.even>.sorting_1, tabl
 				<th><label>Location</label></th>	
 				<th><label>Time</label></th>
 				<th><label>Date</label></th>
+				<th><label>Tickets</label></th>
 			</tr>		
 		</thead>
 		</table>
