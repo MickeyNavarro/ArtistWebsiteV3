@@ -1,10 +1,13 @@
-//Almicke Navarro and Emily Quevedo
-//CST-341
-//October 27, 2019 
-//This is our own work.
+/**
+ * Almicke Navarro and Emily Quevedo
+ * CST-341
+ * October 27, 2019 
+ * This is our own work.
+ * 
+ * DATA SERVICE 
+ * this is the event data service; this will deal with any CRUD operations when interacting with the database
+ */
 
-//DATA SERVICE 
-//this is the event data service; this will deal with any CRUD operations when interacting with the database
 package com.data;
 
 import java.util.ArrayList;
@@ -15,6 +18,7 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
+import com.exception.DatabaseException;
 import com.model.Event;
 
 
@@ -24,7 +28,7 @@ public class EventDataService implements EventDataInterface{
 	private DataSource dataSource; 
 	private JdbcTemplate jdbcTemplateObject;
 	
-	/*
+	/**
 	 * Default constructor 
 	 */
 	public EventDataService() { 
@@ -34,13 +38,14 @@ public class EventDataService implements EventDataInterface{
 	 * Method to create a new event in the database 
 	 * @param event
 	 * @return true, if successful; false, if unsuccessful
+	 * @throws DatabaseException
 	 */
 	@Override
 	public boolean create(Event event) {
 		String sql = "INSERT INTO ArtistWeb.Event (name, type, location, time, date) VALUES (?,?,?,?,?)";
 		try { 
 			//output statement for console
-			System.out.println("Successful connection!");
+			System.out.println("Successful connection for EventDataService.create()!");
 			
 			//Execute SQL Insert 
 			int rows = jdbcTemplateObject.update(sql, 
@@ -54,10 +59,10 @@ public class EventDataService implements EventDataInterface{
 		}
 		catch (Exception e) { 
 			//output statement for console
-			System.out.println("Failed connection!");
+			System.out.println("Failed connection for EventDataService.create()!");
 			e.printStackTrace();
+			throw new DatabaseException(e); 
 		}
-		return false;
 	}
 	
 	/**
@@ -75,6 +80,7 @@ public class EventDataService implements EventDataInterface{
 	 * Method to read a single event in the database by its id
 	 * @param id of an event
 	 * @return event
+	 * @throws DatabaseException
 	 */
 	@Override
 	public Event readById(int id) {
@@ -85,7 +91,7 @@ public class EventDataService implements EventDataInterface{
 		
 		try { 
 			//output statement for console
-			System.out.println("Successful connection!");
+			System.out.println("Successful connection for EventDataService.readById()!");
 			
 			//Execute SQL Query and check if an Event was returned
 			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql, id); 
@@ -102,8 +108,9 @@ public class EventDataService implements EventDataInterface{
 		}
 		catch (Exception e) { 
 			//output statement for console
-			System.out.println("Failed connection!");
+			System.out.println("Failed connection for EventDataService.readById()!");
 			e.printStackTrace();
+			throw new DatabaseException(e); 
 		}
 		return event; 
 	}
@@ -112,6 +119,7 @@ public class EventDataService implements EventDataInterface{
 	 * Method to read all events in the database 
 	 * @param n/a
 	 * @return array of events
+	 * @throws DatabaseException
 	 */
 	@Override
 	public List<Event> readAll() {
@@ -122,7 +130,7 @@ public class EventDataService implements EventDataInterface{
 		
 		try { 
 			//output statement for console
-			System.out.println("Successful connection!");
+			System.out.println("Successful connection for EventDataService.readAll()!");
 			
 			//Execute SQL Query and loop over result set
 			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql); 
@@ -139,8 +147,10 @@ public class EventDataService implements EventDataInterface{
 		}
 		catch (Exception e) { 
 			//output statement for console
-			System.out.println("Failed connection!");
+			System.out.println("Failed connection for EventDataService.readAll()!");
 			e.printStackTrace();
+			throw new DatabaseException(e); 
+
 		}
 		return events; 
 	}
@@ -149,6 +159,7 @@ public class EventDataService implements EventDataInterface{
 	 * Method to update an event in the database 
 	 * @param event
 	 * @return true, if successful; false, if unsuccessful
+	 * @throws DatabaseException
 	 */
 	@Override
 	public boolean update(Event event) {
@@ -156,7 +167,7 @@ public class EventDataService implements EventDataInterface{
 
 		try { 
 			//output statement for console
-			System.out.println("Successful connection!");
+			System.out.println("Successful connection for EventDataService.update()!");
 			
 			//Execute SQL update 
 			int rows = jdbcTemplateObject.update(sql, 
@@ -172,16 +183,18 @@ public class EventDataService implements EventDataInterface{
 		}
 		catch (Exception e) { 
 			//output statement for console
-			System.out.println("Failed connection!");
+			System.out.println("Failed connection for EventDataService.update()!");
 			e.printStackTrace();
+			throw new DatabaseException(e); 
+
 		}
-		return false;
 	}
 	
 	/**
 	 * Method to delete an event in the database 
 	 * @param id of an event
 	 * @return true, if successful; false, if unsuccessful
+	 * @throws DatabaseException
 	 */
 	@Override
 	public boolean delete(int id) {
@@ -189,7 +202,7 @@ public class EventDataService implements EventDataInterface{
 		
 		try { 
 			//output statement for console
-			System.out.println("Successful connection!");
+			System.out.println("Successful connection for EventDataService.delete()!");
 			
 			//Execute SQL delete 
 			int rows = jdbcTemplateObject.update(sql, id); 
@@ -199,10 +212,11 @@ public class EventDataService implements EventDataInterface{
 		}
 		catch (Exception e) { 
 			//output statement for console
-			System.out.println("Failed connection!");
+			System.out.println("Failed connection for EventDataService.delete()!");
 			e.printStackTrace();
+			throw new DatabaseException(e); 
+
 		}
-		return false;
 	}
 	
 	/**

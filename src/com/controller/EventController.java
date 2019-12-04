@@ -1,10 +1,11 @@
-//Almicke Navarro and Emily Quevedo
-//CST-341
-//October 11, 2019 
-//This is our own work.
-
-//CONTROLLER 
-//this is the event controller; this will deal with any CRUD operations for the model object of event
+/**
+ * Almicke Navarro and Emily Quevedo
+ * CST-341
+ * October 11, 2019 This is our own work.
+ *  
+ * CONTROLLER 
+ * this is the event controller; this will deal with any CRUD operations for the model object of event
+ */
 package com.controller;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.business.EventBusinessInterface;
+import com.exception.DatabaseException;
 import com.model.Event;
 
 @Controller 
@@ -43,9 +45,21 @@ public class EventController {
 	 */
 	@RequestMapping(path="/events", method=RequestMethod.GET)
 	public ModelAndView displayEvents() { 
-		//call the order business service to return a list of events
-		List<Event> events = service.findAllEvents(); 
-		return new ModelAndView("eventsPage", "events", events);
+		try {
+			//call the order business service to return a list of events
+			List<Event> events = service.findAllEvents(); 
+			return new ModelAndView("eventsPage", "events", events);
+		}
+		catch (DatabaseException e) {
+			//create a ModelAndView 
+			ModelAndView mv = new ModelAndView("errorPage"); 
+					
+			//create new object to output the error
+			mv.addObject("error", e.getMessage()); 
+					
+			//return to create event form page to show the connection error
+			return mv; 
+		}
 	}
 	
 	/**
@@ -54,9 +68,21 @@ public class EventController {
 	 */
 	@RequestMapping(path="/adminEvents", method=RequestMethod.GET)
 	public ModelAndView displayAdminEvents() { 
-		//call the order business service to return a list of events
-		List<Event> events = service.findAllEvents(); 
-		return new ModelAndView("adminEventsPage", "events", events);
+		try {
+			//call the order business service to return a list of events
+			List<Event> events = service.findAllEvents(); 
+			return new ModelAndView("adminEventsPage", "events", events);
+		}
+		catch (DatabaseException e) { 
+			//create a ModelAndView 
+			ModelAndView mv = new ModelAndView("errorPage"); 
+					
+			//create new object to output the error
+			mv.addObject("error", e.toString()); 
+					
+			//return to create event form page to show the connection error
+			return mv; 
+		}
 	}
 	
 	/**
@@ -81,9 +107,10 @@ public class EventController {
 			//return to create event form to show any event creation errors
 			return new ModelAndView("createEventPage", "event", event); 
 		} 
-				
-		//call the order business service to create the event & check if successful
-		if (service.addEvent(event)) {
+		
+		try {
+			//call the order business service to create the event & check if successful
+			service.addEvent(event); 
 				
 			//call the order business service to return a list of events
 			List<Event> events = service.findAllEvents(); 
@@ -92,14 +119,12 @@ public class EventController {
 				//no admin modules have been create yet so it will return to an temp. admin events page 
 				return new ModelAndView("adminEventsPage", "events", events); 
 		}
-		else { 
-			//if not, 
-					
+		catch (DatabaseException e) { 					
 			//create a ModelAndView 
 			ModelAndView mv = new ModelAndView("createEventPage", "event", event); 
 					
 			//create new object to output that there was a database connection error
-			mv.addObject("error", new String("Could not connect to database!")); 
+			mv.addObject("error", e.toString()); 
 					
 			//return to create event form page to show the connection error
 			return mv; 
@@ -112,22 +137,23 @@ public class EventController {
 	 * @return updateEventPage, if the connection was successful; errorPage with errors displayed, if unsuccessful
 	 */
 	@RequestMapping(path="/updateEvent", method = RequestMethod.POST) 
-	public ModelAndView displayEventUpdatePage(@RequestParam(name= "id") int id) { 
+	public ModelAndView displayEventUpdatePage(@RequestParam(name= "eventId") int id) { 
 		
 		//check if an id was passed
 		if (id != 0) { 
-			//call the order business service to find the event by its given id 
-			Event event = service.findEvent(id); 
 			
-			if (event != null) { 
+			try {
+				//call the order business service to find the event by its given id 
+				Event event = service.findEvent(id); 
+				
 				return new ModelAndView("updateEventPage", "event", event);
 			}
-			else { 
+			catch (DatabaseException e) {
 				//create a ModelAndView 
 				ModelAndView mv = new ModelAndView("errorPage"); 
 						
 				//create new object to output the error
-				mv.addObject("error", new String("Could not connect to database!")); 
+				mv.addObject("error", e.toString()); 
 						
 				//return to create event form page to show the connection error
 				return mv; 
@@ -163,8 +189,9 @@ public class EventController {
 			return new ModelAndView("updateEventPage", "event", event); 
 		} 
 
-		//call the order business service to update the event & check if successful
-		if (service.editEvent(event)) {
+		try {
+			//call the order business service to update the event & check if successful
+			service.editEvent(event); 
 				
 			//call the order business service to return a list of events
 			List<Event> events = service.findAllEvents(); 
@@ -173,14 +200,12 @@ public class EventController {
 				//no admin modules have been create yet so it will return to an temp. admin events page 
 				return new ModelAndView("adminEventsPage", "events", events); 
 		}
-		else { 
-			//if not, 
-					
+		catch (DatabaseException e) { 					
 			//create a ModelAndView 
 			ModelAndView mv = new ModelAndView("updateEventPage", "event", event); 
 					
 			//create new object to output that there was a database connection error
-			mv.addObject("error", new String("Could not connect to database!")); 
+			mv.addObject("error", e.toString()); 
 					
 			//return to create event form page to show the connection error
 			return mv; 
@@ -193,9 +218,10 @@ public class EventController {
 	 * @return adminEventsPage, if the deletion was successful; errorPage with errors displayed, if unsuccessful
 	 */
 	@RequestMapping(path="/deleteEvent", method = RequestMethod.POST)
-	public ModelAndView deleteEvent(@RequestParam(name= "id") int id) { 
-		//call the order business service to update the event & check if successful
-		if (service.deleteEvent(id)) {
+	public ModelAndView deleteEvent(@RequestParam(name= "eventId") int id) { 
+		try {
+			//call the order business service to update the event & check if successful
+			service.deleteEvent(id); 
 				
 			//call the order business service to return a list of events
 			List<Event> events = service.findAllEvents(); 
@@ -204,12 +230,12 @@ public class EventController {
 				//no admin modules have been create yet so it will return to an temp. admin events page 
 				return new ModelAndView("adminEventsPage", "events", events); 
 		}
-		else { 
+		catch (DatabaseException e) {
 			//create a ModelAndView 
 			ModelAndView mv = new ModelAndView("errorPage"); 
 					
 			//create new object to output the error
-			mv.addObject("error", new String("There was an error deleting that event!")); 
+			mv.addObject("error", e.toString()); 
 					
 			//return to create event form page to show the connection error
 			return mv; 

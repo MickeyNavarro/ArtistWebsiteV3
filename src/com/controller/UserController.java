@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.business.UserBusinessInterface;
+import com.exception.DatabaseException;
 import com.model.User;
 
 @Controller 
@@ -73,10 +74,21 @@ public class UserController {
 			//validate the form 
 			if(!result.hasErrors()) { 
 				
-				//user is shown error message if login failed
-				if (service.register(user)) {
+				try {
+					service.register(user); 
+
 					//return to the home page to show that login was successful
 					return new ModelAndView("loginPage", "user", user); 
+				}
+				catch (DatabaseException e) {
+					//create a ModelAndView 
+					ModelAndView mv = new ModelAndView("errorPage"); 
+							
+					//create new object to output the error
+					mv.addObject("error", e.getMessage()); 
+							
+					//return to create event form page to show the connection error
+					return mv; 
 				}
 			}
 			//return to login form to show login errors
@@ -106,16 +118,29 @@ public class UserController {
 			//validate the form 
 			if(!result.hasErrors()) { 
 				//user is shown error message if login failed
-				if (service.login(user) == null) {
-					ObjectError error = new ObjectError("*", "Invalid username or password");
-					result.addError(error);
+				
+				try {
+					if (service.login(user) == null) {
+						ObjectError error = new ObjectError("*", "Invalid username or password");
+						result.addError(error);
+					}
+					else {
+						//set session
+						session.setAttribute("user", user);
+						//return to the home page to show that login was successful
+						return new ModelAndView("homePage", "user", user); 
+					}
+				} catch (DatabaseException e) {
+					//create a ModelAndView 
+					ModelAndView mv = new ModelAndView("errorPage"); 
+							
+					//create new object to output the error
+					mv.addObject("error", e.getMessage()); 
+							
+					//return to create event form page to show the connection error
+					return mv; 
 				}
-				else {
-					//set session
-					session.setAttribute("user", user);
-					//return to the home page to show that login was successful
-					return new ModelAndView("homePage", "user", user); 
-				}
+				
 			}
 			//return to login form to show login errors
 			return new ModelAndView("loginPage", "user", user); 
