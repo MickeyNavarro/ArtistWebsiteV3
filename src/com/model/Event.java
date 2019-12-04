@@ -1,12 +1,13 @@
-//Almicke Navarro and Emily Quevedo
-//CST-341
-//October 8, 2019 
-//This is our own work. 
-
-//MODEL 
-//this is the event object model; this page will hold the attributes, constructors, getters, and setters for an event
-
-//Resource: http://zetcode.com/java/hibernatevalidator/
+/**
+ * Almicke Navarro and Emily Quevedo
+ * CST-341
+ * October 8, 2019 
+ * This is our own work.
+ * 
+ * MODEL 
+ * this is the event object model; this page will hold the attributes, constructors, getters, and setters for an event
+ * Resource: http://zetcode.com/java/hibernatevalidator/
+ */
 package com.model;
 
 import javax.validation.constraints.NotNull;

@@ -1,9 +1,10 @@
-//Almicke Navarro and Emily Quevedo
-//CST-341
-//November 8, 2019 
-//This is our own work.
-
-//Rest Service
+/**
+ * Almicke Navarro and Emily Quevedo
+ * CST-341
+ * November 8, 2019 
+ * This is our own work.
+ * Rest Service
+ */
 
 package com.service;
 

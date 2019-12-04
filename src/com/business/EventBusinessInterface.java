@@ -1,7 +1,10 @@
-//Almicke Navarro and Emily Quevedo
-//CST-341
-//October 11, 2019
-//Event Interface class that will be implemented in the Event SpringBean
+/**
+ * Almicke Navarro and Emily Quevedo
+ * CST-341
+ * October 11, 2019
+ * Event Interface class that will be implemented in the Event SpringBean
+ */
+
 package com.business;
 
 import java.util.List;

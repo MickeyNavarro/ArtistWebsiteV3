@@ -1,8 +1,10 @@
-//Almicke Navarro and Emily Quevedo
-//CST-341
-//October 11, 2019
-//BUSINESS SERVICE 
-//this is the event business service; this will deal with any CRUD operations by sending the parameters to the data service
+/**
+ * Almicke Navarro and Emily Quevedo
+ * CST-341
+ * October 11, 2019
+ * BUSINESS SERVICE 
+ * this is the event business service; this will deal with any CRUD operations by sending the parameters to the data service
+ */
 package com.business;
 
 import java.util.List;
