@@ -8,12 +8,12 @@
 		$.ajax(
 		{
 			type: "GET",
-			url: "/WebsiteV4/service/events", dataType: "json", success: function(data) {
+			url: "/ArtistWebsiteV3/service/events", dataType: "json", success: function(data) {
 				$('#events').dataTable({
 					"responsive":true,
 					"data": data,
 					"columns": [{"data": "name"}, {"data": "type"}, {"data": "location"}, {"data": "time"}, {"data": "date"}, {
-		                "defaultContent": "<button>Buy</button>"}] 
+		                "defaultContent": "<a href = 'https://www.livenation.com' class= 'button'>Buy</a>"}] 
 				});
 			},
 		error: function(xhr, ajaxOptions, thrownError) 
