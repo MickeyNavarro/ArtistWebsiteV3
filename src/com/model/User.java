@@ -1,10 +1,12 @@
-//Almicke Navarro and Emily Quevedo
-//CST-341
-//September 16, 2019 
-//This is our own work. 
-
-//MODEL 
-//this is the user object model; this page will hold the attributes, constructors, getters, and setters for a user
+/**
+ * Almicke Navarro and Emily Quevedo
+ * CST-341
+ * September 16, 2019 
+ * This is our own work. 
+ * 
+ * MODEL 
+ * this is the user object model; this page will hold the attributes, constructors, getters, and setters for a user
+*/
 
 package com.model;
 

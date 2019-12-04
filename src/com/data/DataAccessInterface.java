@@ -1,7 +1,9 @@
-//Almicke Navarro and Emily Quevedo
-//CST-341
-//October 26, 2019
-//Data Access Interface class that will be implemented in the other data interfaces
+/**
+ * Almicke Navarro and Emily Quevedo
+ * CST-341
+ * October 26, 2019
+ * Data Access Interface class that will be implemented in the other data interfaces
+ */
 
 package com.data;
 

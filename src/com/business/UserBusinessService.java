@@ -1,9 +1,12 @@
-//Almicke Navarro and Emily Quevedo
-//CST-341
-//October 11, 2019
+/**
+ * Almicke Navarro and Emily Quevedo
+ * CST-341
+ * October 11, 2019
+ * 
+ * BUSINESS SERVICE 
+ * this is the user business service; this will deal with any CRUD operations by sending the parameters to the data service 
+ */
 
-//BUSINESS SERVICE 
-//this is the user business service; this will deal with any CRUD operations by sending the parameters to the data service 
 package com.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
