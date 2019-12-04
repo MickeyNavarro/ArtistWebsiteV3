@@ -16,7 +16,8 @@
 <style>
 body {
 	background-image: url('resources/stars.gif');
-	padding: 150px;
+	padding-top: 150px;
+	color: white;
 	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
 }
 </style>
@@ -116,6 +117,7 @@ $( function() {
 					<a href="events">Cancel</a>
 				</td>
 			</table>
+			<font color= "red"><form:errors path="*"/></font>
 	</form:form>
 </body>
 </html>
