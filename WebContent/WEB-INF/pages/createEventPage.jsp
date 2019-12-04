@@ -114,7 +114,7 @@ $( function() {
 			<tr>
 				<td colspan="2"> 
 					<input type = "submit" value = "Submit"/>
-					<a href="events">Cancel</a>
+					<a href="adminEvents">Cancel</a>
 				</td>
 			</table>
 			<font color= "red"><form:errors path="*"/></font>
