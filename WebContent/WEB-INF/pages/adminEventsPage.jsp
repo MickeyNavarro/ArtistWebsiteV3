@@ -19,10 +19,10 @@
 <style>
 body {
 	background-image: url('resources/stars.gif');
-	padding: 150px;
+	padding-top: 150px;
+	color: white;
 	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
 }
-</style>
 </style>
 </head>
 <body>
@@ -57,5 +57,8 @@ body {
 			</tr>
 		</c:forEach>
 		</table>
+		<c:forEach items="${errors}" var="error">
+				<font color="red"><p>${error}</p></font>
+			</c:forEach>
 </body>
 </html>
