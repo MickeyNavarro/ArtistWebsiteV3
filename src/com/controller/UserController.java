@@ -37,14 +37,6 @@ public class UserController {
 	this.service = service;
 	}
 	/**
-	 * This method will display the home page 
-	 * @return homePage
-	 */
-		@RequestMapping(path="/home", method=RequestMethod.GET)
-		public ModelAndView displayHomePage() { 
-			return new ModelAndView("homePage");
-			}
-	/**
 	 * This method will display the about page 
 	 * @return aboutPage
 	 */
