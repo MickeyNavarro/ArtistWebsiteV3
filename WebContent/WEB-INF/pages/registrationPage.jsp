@@ -16,7 +16,8 @@
 	<style>
 body {
 	background-image: url('resources/stars.gif');
-	padding: 150px;
+	padding-top: 150px;
+	color: white;
 	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
 }
 </style>
@@ -27,27 +28,27 @@ body {
 		<table> 
 			<tr>
 				<td><form:label path="firstName">First Name:</form:label></td>
-				<td><form:input path="firstName"/><form:errors path="firstName"/></td>
+				<td><form:input placeholder="Enter First Name" path="firstName"/><form:errors path="firstName"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="lastName">Last Name:</form:label></td>
-				<td><form:input path="lastName"/><form:errors path="lastName"/></td>
+				<td><form:input placeholder="Enter Last Name" path="lastName"/><form:errors path="lastName"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="username">Username:</form:label></td>
-				<td><form:input path="username"/><form:errors path="username"/></td>
+				<td><form:input placeholder="Enter Username" path="username"/><form:errors path="username"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="email">Email:</form:label></td>
-				<td><form:input path="email"/><form:errors path="email"/></td>
+				<td><form:input placeholder="Enter E-mail" path="email"/><form:errors path="email"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="phoneNumber">Phone Number:</form:label></td>
-				<td><form:input path="phoneNumber"/><form:errors path="phoneNumber"/></td>
+				<td><form:input placeholder="Enter Phone Number" path="phoneNumber"/><form:errors path="phoneNumber"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="password">Password:</form:label></td>
-				<td><form:password path="password"/><form:errors path="password"/></td>
+				<td><form:password placeholder="Enter Password" path="password"/><form:errors path="password"/></td>
 			</tr>
 			<tr>
 				<td colspan="2"> 
