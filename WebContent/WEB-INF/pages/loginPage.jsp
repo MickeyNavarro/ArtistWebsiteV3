@@ -16,7 +16,8 @@
 <style>
 body {
 	background-image: url('resources/stars.gif');
-	padding: 150px;
+	color: white;
+	padding-top: 150px;
 	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
 }
 </style>
@@ -27,11 +28,11 @@ body {
 		<table> 
 			<tr>
 				<td><form:label path="username">Username:</form:label></td>
-				<td><form:input path="username"/></td>
+				<td><form:input placeholder="Enter Username" path="username"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="password">Password:</form:label></td>
-				<td><form:password path="password"/></td>
+				<td><form:password placeholder="Enter Password" path="password"/></td>
 			</tr>
 			<tr>
 				<td colspan="2"> 
