@@ -1,10 +1,12 @@
-//Almicke Navarro and Emily Quevedo
-//CST-341
-//December 3, 2019 
-//This is our own work.
-
-//CONTROLLER 
-//this is the home controller; this will deal with home page
+/**
+ * Almicke Navarro and Emily Quevedo
+ * CST-341
+ * December 3, 2019 
+ * This is our own work.
+ * 
+ * CONTROLLER 
+ * this is the home controller; this will deal with home page
+ */
 
 package com.controller;
 
