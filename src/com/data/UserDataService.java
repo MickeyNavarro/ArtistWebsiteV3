@@ -1,10 +1,13 @@
-//Almicke Navarro and Emily Quevedo
-//CST-341
-//October 27, 2019 
-//This is our own work.
+/**
+ * Almicke Navarro and Emily Quevedo
+ * CST-341
+ * October 27, 2019 
+ * This is our own work.
+ * 
+ * DATA SERVICE 
+ * this is the user data service; this will deal with any CRUD operations when interacting with the database
+ */
 
-//DATA SERVICE 
-//this is the user data service; this will deal with any CRUD operations when interacting with the database
 package com.data;
 
 import java.util.ArrayList;
@@ -15,6 +18,7 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
+import com.exception.DatabaseException;
 import com.model.User;
 
 public class UserDataService implements UserDataInterface{
@@ -22,15 +26,17 @@ public class UserDataService implements UserDataInterface{
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
 	
-	//Default constructor
+	/**
+	 * Default constructor
+	 */
 	public UserDataService() {
-		//
 	}
 
 	/**
 	 * Method to create a new user in the database (register)
 	 * @param user
 	 * @return boolean
+	 * @throws DatabaseException
 	 */
 	@Override
 	public boolean create(User user) {
@@ -51,14 +57,16 @@ public class UserDataService implements UserDataInterface{
 			//output statement for console
 			System.out.println("Exiting UserDataService.create() with false");
 			e.printStackTrace();
+			throw new DatabaseException(e); 
+
 		}
-		return true;
 	}
 	
 	/**
 	 * Method to read a single user in the database (login)
 	 * @param user
 	 * @return user
+	 * @throws DatabaseException
 	 */		
 	@Override
 		public User read(User t) {
@@ -84,10 +92,14 @@ public class UserDataService implements UserDataInterface{
 					int role = srs.getInt("role");
 					user = new User(ID, firstName, lastName, username, email, phone, password, role);
 				}
-				else {System.out.println("Exit UserDataService.read() with no User returned");};
+				else {
+					System.out.println("Exit UserDataService.read() with no User returned");
+					};
 			}
 			catch (Exception e) {
 				e.printStackTrace();
+				throw new DatabaseException(e); 
+
 			}
 			return user;
 		}		
@@ -104,11 +116,10 @@ public class UserDataService implements UserDataInterface{
 		}
 	 
 	 	/**
-		 * Method to update a user in the database 
+		 * Method to update a user in the database - NOT IN USE
 		 * @param user
 		 * @return true, if successful; false, if unsuccessful
 		 */
-		//updates user
 		@Override
 		public boolean update(User t) {
 			// TODO Auto-generated method stub
@@ -116,11 +127,10 @@ public class UserDataService implements UserDataInterface{
 		}
 
 		/**
-		 * Method to delete a user in the database 
+		 * Method to delete a user in the database - NOT IN USE
 		 * @param id 
 		 * @return true, if successful; false, if unsuccessful
 		 */
-		//deletes user
 		@Override
 		public boolean delete(int id) {
 			// TODO Auto-generated method stub
@@ -128,11 +138,9 @@ public class UserDataService implements UserDataInterface{
 		}
 		
 		/**
-		 * Method to set the bean
+		 * Method to set the bean; IoC helper funcation
 		 * @param dataSource
 		 */
-		//IoC helper function
-		//Spring Data Source to inject into DAO
 		public void setDataSource(DataSource dataSource) {
 			this.dataSource = dataSource;
 			this.jdbcTemplateObject = new JdbcTemplate(dataSource);
