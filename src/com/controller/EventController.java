@@ -8,7 +8,6 @@
  */
 package com.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.business.EventBusinessInterface;
-import com.exception.DatabaseException;
 import com.model.Event;
 
 @Controller 
@@ -50,12 +48,16 @@ public class EventController {
 			List<Event> events = service.findAllEvents(); 
 			return new ModelAndView("eventsPage", "events", events);
 		}
-		catch (DatabaseException e) {
+		//make sure to catch all exceptions 
+		catch (Exception e) {
 			//create a ModelAndView 
 			ModelAndView mv = new ModelAndView("errorPage"); 
 					
+			//create a string message for the errorPage 
+			String err = "ERROR: " + e.getMessage();
+					
 			//create new object to output the error
-			mv.addObject("error", e.getMessage()); 
+			mv.addObject("error", err); 
 					
 			//return to create event form page to show the connection error
 			return mv; 
@@ -73,12 +75,15 @@ public class EventController {
 			List<Event> events = service.findAllEvents(); 
 			return new ModelAndView("adminEventsPage", "events", events);
 		}
-		catch (DatabaseException e) { 
+		catch (Exception e) { 
 			//create a ModelAndView 
 			ModelAndView mv = new ModelAndView("errorPage"); 
 					
+			//create a string message for the errorPage 
+			String err = "ERROR: " + e.getMessage();
+					
 			//create new object to output the error
-			mv.addObject("error", e.toString()); 
+			mv.addObject("error", err); 
 					
 			//return to create event form page to show the connection error
 			return mv; 
@@ -119,12 +124,15 @@ public class EventController {
 				//no admin modules have been create yet so it will return to an temp. admin events page 
 				return new ModelAndView("adminEventsPage", "events", events); 
 		}
-		catch (DatabaseException e) { 					
+		catch (Exception e) { 					
 			//create a ModelAndView 
 			ModelAndView mv = new ModelAndView("createEventPage", "event", event); 
 					
-			//create new object to output that there was a database connection error
-			mv.addObject("error", e.toString()); 
+			//create a string message for the errorPage 
+			String err = "ERROR: " + e.getMessage();
+					
+			//create new object to output the error
+			mv.addObject("error", err);  
 					
 			//return to create event form page to show the connection error
 			return mv; 
@@ -148,12 +156,15 @@ public class EventController {
 				
 				return new ModelAndView("updateEventPage", "event", event);
 			}
-			catch (DatabaseException e) {
+			catch (Exception e) {
 				//create a ModelAndView 
 				ModelAndView mv = new ModelAndView("errorPage"); 
 						
+				//create a string message for the errorPage 
+				String err = "ERROR: " + e.getMessage();
+						
 				//create new object to output the error
-				mv.addObject("error", e.toString()); 
+				mv.addObject("error", err);  
 						
 				//return to create event form page to show the connection error
 				return mv; 
@@ -200,12 +211,15 @@ public class EventController {
 				//no admin modules have been create yet so it will return to an temp. admin events page 
 				return new ModelAndView("adminEventsPage", "events", events); 
 		}
-		catch (DatabaseException e) { 					
+		catch (Exception e) { 					
 			//create a ModelAndView 
 			ModelAndView mv = new ModelAndView("updateEventPage", "event", event); 
 					
-			//create new object to output that there was a database connection error
-			mv.addObject("error", e.toString()); 
+			//create a string message for the errorPage 
+			String err = "ERROR: " + e.getMessage();
+					
+			//create new object to output the error
+			mv.addObject("error", err);  
 					
 			//return to create event form page to show the connection error
 			return mv; 
@@ -230,12 +244,15 @@ public class EventController {
 				//no admin modules have been create yet so it will return to an temp. admin events page 
 				return new ModelAndView("adminEventsPage", "events", events); 
 		}
-		catch (DatabaseException e) {
+		catch (Exception e) {
 			//create a ModelAndView 
 			ModelAndView mv = new ModelAndView("errorPage"); 
 					
+			//create a string message for the errorPage 
+			String err = "ERROR: " + e.getMessage();
+					
 			//create new object to output the error
-			mv.addObject("error", e.toString()); 
+			mv.addObject("error", err); 
 					
 			//return to create event form page to show the connection error
 			return mv; 
