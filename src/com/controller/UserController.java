@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.business.UserBusinessInterface;
-import com.exception.DatabaseException;
 import com.model.User;
 
 @Controller 
@@ -72,12 +71,15 @@ public class UserController {
 					//return to the home page to show that login was successful
 					return new ModelAndView("loginPage", "user", user); 
 				}
-				catch (DatabaseException e) {
+				catch (Exception e) {
 					//create a ModelAndView 
 					ModelAndView mv = new ModelAndView("errorPage"); 
+					
+					//create a string message for the errorPage 
+					String err = "ERROR: " + e.getMessage();
 							
 					//create new object to output the error
-					mv.addObject("error", e.getMessage()); 
+					mv.addObject("error", err); 
 							
 					//return to create event form page to show the connection error
 					return mv; 
@@ -122,12 +124,15 @@ public class UserController {
 						//return to the home page to show that login was successful
 						return new ModelAndView("homePage", "user", user); 
 					}
-				} catch (DatabaseException e) {
+				} catch (Exception e) {
 					//create a ModelAndView 
 					ModelAndView mv = new ModelAndView("errorPage"); 
 							
+					//create a string message for the errorPage 
+					String err = "ERROR: " + e.getMessage();
+							
 					//create new object to output the error
-					mv.addObject("error", e.getMessage()); 
+					mv.addObject("error", err); 
 							
 					//return to create event form page to show the connection error
 					return mv; 
