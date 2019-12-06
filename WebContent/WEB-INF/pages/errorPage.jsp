@@ -8,21 +8,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://www.springframework.org/tags/form" prefix="form" %>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Error</title>
 
-<style>
-body {
-	background-image: url('resources/stars.gif');
-	padding: 150px;
-	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
-}
-</style>
-</head>
-<body>
-	<font color="red"><p>${error}</p></font>
-</body>
-</html>
+<title>Error</title>
+
+<div class="error">
+<font color="red"><p>${error}</p></font>
+</div>
