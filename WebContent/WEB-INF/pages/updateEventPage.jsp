@@ -8,32 +8,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://www.springframework.org/tags/form" prefix="form" %>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Update Event</title>
 
-<style>
-body {
-	background-image: url('resources/stars.gif');
-	padding-top: 150px;
-	color:white;
-	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
-}
-</style>
+<title>Update Event</title>
 
- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
 $( function() {
     $( "#datepicker" ).datepicker();
   } );
 </script>
-</head>
-<body>
+
+<div class="updateEvent">
 	<h2>Update Event</h2>
 	<form:form method= "POST" modelAttribute="event" action="updateEventSuccess">
 		<form:hidden name="ID" value="${event.ID}" path="ID"/>
@@ -121,5 +105,4 @@ $( function() {
 			</table>
 	<font color="red"><p>${error}</p></font>
 	</form:form>
-</body>
-</html>
+</div>
