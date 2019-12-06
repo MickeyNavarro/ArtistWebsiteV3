@@ -3,8 +3,6 @@
 <%@ taglib uri = "http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core"%>
 
-
-
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
@@ -35,10 +33,11 @@
   <a href="home#events" class="nav-link nav-link-ltr w3-bar-item" onclick="myFunction()">EVENTS</a>
   <a href="home#about" class="nav-link nav-link-ltr w3-bar-item" onclick="myFunction()">ABOUT</a>
   <a href="home#music" class="nav-link nav-link-ltr w3-bar-item" onclick="myFunction()">MUSIC</a>
+  <hr>
   <c:choose>
             <c:when test ="${sessionScope.user != null}"> 
-            <a class="nav-link nav-link-ltr w3-bar-item w3-right">CREW MEMBER: ${user.username}</a>
-            <a href="logout" class="nav-link nav-link-ltr w3-bar-item w3-right">LOGOUT</a>
+            <a class="nav-link nav-link-ltr w3-bar-item">CREW MEMBER: ${user.username}</a>
+            <a href="logout" class="nav-link nav-link-ltr w3-bar-item">LOGOUT</a>
 
             <c:if test="${sessionScope.user.username == 'admin'}">
             <a href="adminEvents" class="nav-link nav-link-ltr w3-bar-item">ADMIN</a>
