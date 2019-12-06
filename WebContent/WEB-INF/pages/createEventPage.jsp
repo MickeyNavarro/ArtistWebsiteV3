@@ -8,32 +8,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri = "http://www.springframework.org/tags/form" prefix="form" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Create Event</title>
-<style>
-body {
-	background-image: url('resources/stars.gif');
-	padding-top: 150px;
-	color: white;
-	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
-}
-</style>
 
- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<title>Create Event</title>
+
 <script>
 $( function() {
     $( "#datepicker" ).datepicker();
   } );
 </script>
 
-</head>
-<body>
+<div class="createEvent">
 	<h2>Create Event</h2>
 	<form:form method= "POST" modelAttribute="event" action="createEventSuccess">
 		<table> 
@@ -119,5 +103,4 @@ $( function() {
 			</table>
 			<font color= "red"><form:errors path="*"/></font>
 	</form:form>
-</body>
-</html>
+</div>
