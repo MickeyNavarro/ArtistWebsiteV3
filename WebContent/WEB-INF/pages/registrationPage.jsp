@@ -8,21 +8,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://www.springframework.org/tags/form" prefix="form" %>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Register</title>
-	<style>
-body {
-	background-image: url('resources/stars.gif');
-	padding-top: 150px;
-	color: white;
-	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;
-}
-</style>
-</head>
-<body>
+
+<title>Register</title>
+
+<div class="register">
 	<h2>Register</h2>
 	<form:form method= "POST" modelAttribute="user" action="registerSuccess">
 		<table> 
@@ -60,5 +49,4 @@ body {
 				</td>
 		<font color= "red"><form:errors path="*"/></font>
 	</form:form>
-</body>
-</html>
+</div>
