@@ -24,7 +24,7 @@ $( function() {
 		<table> 
 			<tr>
 				<td><form:label path="name">Event Name:</form:label></td>
-				<td><form:input placeholder="Enter Event Name" path="name" value="${event.name}"/><form:errors path="name"/></td>
+				<td><form:input placeholder="Enter Event Name" path="name" value="${event.name}"/><font color= "red"><form:errors path="name"/></font></td>
 			</tr>
 			<tr>
 				<td><form:label path="type">Type:</form:label></td>
@@ -33,11 +33,11 @@ $( function() {
 					<option value="Concert Tour">Concert Tour</option>
 					<option value="Album Release">Album Release</option>
 					<option value="Meet and Greet">Meet and Greet</option>
-				</form:select></td>
+				</form:select><font color= "red"><form:errors path="type"/></font></td>
 			</tr>
 			<tr>
 				<td><form:label path="location">Location:</form:label></td>
-				<td><form:input placeholder="Enter Location" path="location" value = "${event.location}"/><form:errors path="location"/></td>
+				<td><form:input placeholder="Enter Location" path="location" value = "${event.location}"/><font color="red"><form:errors path="location"/></font></td>
 			</tr>
 			<tr>
 				<td><form:label path="time">Time:</form:label></td>
@@ -91,11 +91,11 @@ $( function() {
 					<option value="10:30 PM">10:30 PM</option>
 					<option value="11 PM">11 PM</option>
 					<option value="11:30 PM">11:30 PM</option>
-				</form:select></td>
+				</form:select><font color= "red"><form:errors path="time"/></font></td>
 			</tr>
 			<tr>
 				<td><form:label path="date">Date:</form:label></td>
-				<td><form:input placeholder="Enter Date" id="datepicker" value="${event.date}" path="date"/><form:errors path="date"/></td>
+				<td><form:input placeholder="Enter Date" id="datepicker" value="${event.date}" path="date"/><font color="red"><form:errors path="date"/></font></td>
 			</tr>
 			<tr>
 				<td colspan="2"> 
