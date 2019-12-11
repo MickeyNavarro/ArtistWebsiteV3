@@ -29,7 +29,7 @@ public class UserController {
 	
 	/**
 	 * Method to set the bean
-	 * @param service
+	 * @param interface that the methods will refer to 
 	 */
 	
 	public void setUserService(UserBusinessInterface service) {
@@ -54,8 +54,8 @@ public class UserController {
 			}
 	/**
 	 * This method will carry out the user registration by sending the validated user to the business service
-	 * @param user
-	 * @param result
+	 * @param new user with needed attributes
+	 * @param binding result
 	 * @return loginPage, if the registration was successful; registrationPage with errors displayed, if unsuccessful
 	 */
 		@RequestMapping(path="/registerSuccess", method = RequestMethod.POST)
@@ -100,9 +100,9 @@ public class UserController {
 		  
 	/**
 	 * This method will carry out the user login by sending the validated user to the business service & creating a session with the user object
-	 * @param user
-	 * @param result
-	 * @param session
+	 * @param returning user with attributes of username and password
+	 * @param binding result
+	 * @param session variable as it wil help the user stay logged in 
 	 * @return homePage, if the registration was successful; loginPage with errors displayed, if unsuccessful
 	 */
 		@RequestMapping(path="/loginSuccess", method = RequestMethod.POST)
@@ -145,7 +145,7 @@ public class UserController {
 		
 	/**
 	 * This method will carry out the user logout by destroying the session
-	 * @param session
+	 * @param session variable as it will help the user to log out 
 	 * @return homePage
 	 */
 		@RequestMapping(path="/logout", method = RequestMethod.GET) 

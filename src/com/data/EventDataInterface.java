@@ -12,7 +12,7 @@ import com.model.Event;
 public interface EventDataInterface extends DataAccessInterface<Event> {
 	/**
 	 * Method to get an event in the database by its id
-	 * @param id
+	 * @param id of event to be found
 	 * @return event
 	 */
 	public Event readById(int id); 

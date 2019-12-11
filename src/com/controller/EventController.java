@@ -31,7 +31,7 @@ public class EventController {
 	
 	/**
 	 * Method to set the bean 
-	 * @param service
+	 * @param interface that the methods will refer to 
 	 */
 	public void setEventService(EventBusinessInterface service) {
 		this.service = service;
@@ -101,8 +101,8 @@ public class EventController {
 		
 	/**
 	 * This method will carry out the event creation by sending the validated event to the business service
-	 * @param event
-	 * @param result
+	 * @param new event with needed attributes
+	 * @param binding result
 	 * @return adminEventsPage, if the creation was successful; createEventPage with errors displayed, if unsuccessful
 	 */
 	@RequestMapping(path="/createEventSuccess", method = RequestMethod.POST)
@@ -141,7 +141,7 @@ public class EventController {
 	
 	/**
 	 * This method will display the updateEventPage
-	 * @param id of event
+	 * @param id of event to be updated
 	 * @return updateEventPage, if the connection was successful; errorPage with errors displayed, if unsuccessful
 	 */
 	@RequestMapping(path="/updateEvent", method = RequestMethod.POST) 
@@ -187,8 +187,8 @@ public class EventController {
 	
 	/**
 	 * This method will carry out the event update  by sending the validated event to the business service
-	 * @param event
-	 * @param result
+	 * @param event with edited attributes
+	 * @param binding result
 	 * @return adminEventsPage, if the update was successful; updateEventPage with errors displayed, if unsuccessful
 	 */
 	@RequestMapping(path="/updateEventSuccess", method = RequestMethod.POST)
@@ -228,7 +228,7 @@ public class EventController {
 	
 	/**
 	 * This method will carry out the event deletion by sending the event id to the business service	  
-	 * @param id
+	 * @param id of event to be deleted
 	 * @return adminEventsPage, if the deletion was successful; errorPage with errors displayed, if unsuccessful
 	 */
 	@RequestMapping(path="/deleteEvent", method = RequestMethod.POST)

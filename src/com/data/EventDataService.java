@@ -36,7 +36,7 @@ public class EventDataService implements EventDataInterface{
 	
 	/**
 	 * Method to create a new event in the database 
-	 * @param event
+	 * @param new event with needeed attributes
 	 * @return true, if successful; false, if unsuccessful
 	 * @throws DatabaseException
 	 */
@@ -67,7 +67,7 @@ public class EventDataService implements EventDataInterface{
 	
 	/**
 	 * Method to read a single event in the database 
-	 * @param event
+	 * @param event with needed attributes
 	 * @return event
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class EventDataService implements EventDataInterface{
 	/**
 	 * Method to read a single event in the database by its id
 	 * @param id of an event
-	 * @return event
+	 * @return event found by id 
 	 * @throws DatabaseException
 	 */
 	@Override
@@ -117,7 +117,6 @@ public class EventDataService implements EventDataInterface{
 	
 	/**
 	 * Method to read all events in the database 
-	 * @param n/a
 	 * @return array of events
 	 * @throws DatabaseException
 	 */
@@ -192,7 +191,7 @@ public class EventDataService implements EventDataInterface{
 	
 	/**
 	 * Method to delete an event in the database 
-	 * @param id of an event
+	 * @param id of an event to be deleted 
 	 * @return true, if successful; false, if unsuccessful
 	 * @throws DatabaseException
 	 */
@@ -221,7 +220,7 @@ public class EventDataService implements EventDataInterface{
 	
 	/**
 	 * Method to set the data source for use in the spring bean
-	 * @param dataSource
+	 * @param dataSource, to allow for the springbeans to be set 
 	 * @return void
 	 */
 	public void setDataSource(DataSource dataSource) { 
