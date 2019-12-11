@@ -34,8 +34,8 @@ public class UserDataService implements UserDataInterface{
 
 	/**
 	 * Method to create a new user in the database (register)
-	 * @param user
-	 * @return boolean
+	 * @param new user with needed attributes
+	 * @return true, if successful; false, if unsuccessful
 	 * @throws DatabaseException
 	 */
 	@Override
@@ -64,8 +64,8 @@ public class UserDataService implements UserDataInterface{
 	
 	/**
 	 * Method to read a single user in the database (login)
-	 * @param user
-	 * @return user
+	 * @param user with needed attributes to be found
+	 * @return user found by the attributes given
 	 * @throws DatabaseException
 	 */		
 	@Override
@@ -117,7 +117,7 @@ public class UserDataService implements UserDataInterface{
 	 
 	 	/**
 		 * Method to update a user in the database - NOT IN USE
-		 * @param user
+		 * @param user with edited attributes
 		 * @return true, if successful; false, if unsuccessful
 		 */
 		@Override
@@ -128,7 +128,7 @@ public class UserDataService implements UserDataInterface{
 
 		/**
 		 * Method to delete a user in the database - NOT IN USE
-		 * @param id 
+		 * @param id of user to be deleted
 		 * @return true, if successful; false, if unsuccessful
 		 */
 		@Override
@@ -139,7 +139,7 @@ public class UserDataService implements UserDataInterface{
 		
 		/**
 		 * Method to set the bean; IoC helper funcation
-		 * @param dataSource
+		 * @param dataSource, to allow for the springbeans to be set 
 		 */
 		public void setDataSource(DataSource dataSource) {
 			this.dataSource = dataSource;

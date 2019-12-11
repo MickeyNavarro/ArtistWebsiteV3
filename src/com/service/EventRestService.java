@@ -38,7 +38,7 @@ public class EventRestService {
 		
 		/**
 		 * Method to set spring bean
-		 * @param service
+		 * @param interface that the methods will refer to 
 		 */
 		@Autowired
 		public void setEventService(EventBusinessInterface service) {

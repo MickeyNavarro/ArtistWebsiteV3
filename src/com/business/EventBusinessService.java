@@ -31,7 +31,7 @@ public class EventBusinessService implements EventBusinessInterface{
 
 	/**
 	 * business method to ask the data service to find a single event from the database by its id 
-	 * @param event id
+	 * @param id of the event to be found
 	 * @return event
 	 */
 	@Override
@@ -42,7 +42,7 @@ public class EventBusinessService implements EventBusinessInterface{
 
 	/**
 	 * business method to ask the data service to create an event in the database
-	 * @param event 
+	 * @param new event with needed attributes
 	 * @return true, if successful; false, if unsuccessful
 	 */
 	@SuppressWarnings("unchecked")
@@ -53,7 +53,7 @@ public class EventBusinessService implements EventBusinessInterface{
 
 	/**
 	 * business method to ask the data service to edit an event in the database
-	 * @param event 
+	 * @param event with edited attributes
 	 * @return true, if successful; false, if unsuccessful
 	 */
 	@SuppressWarnings("unchecked")
@@ -64,7 +64,7 @@ public class EventBusinessService implements EventBusinessInterface{
 
 	/**
 	 * business method to ask the data service to delete an event in the database
-	 * @param event id 
+	 * @param id of event to be deleted
 	 * @return true, if successful; false, if unsuccessful
 	 */
 	@SuppressWarnings("unchecked")

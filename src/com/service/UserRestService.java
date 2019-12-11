@@ -37,7 +37,7 @@ public class UserRestService {
 		
 		/**
 		 * Method to set spring bean
-		 * @param service
+		 * @param interface that the methods will refer to 
 		 */
 		@Autowired
 		public void setUserService(UserBusinessInterface service) {

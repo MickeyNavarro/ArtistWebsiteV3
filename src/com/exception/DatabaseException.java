@@ -18,7 +18,7 @@ public class DatabaseException extends RuntimeException{
 	
 	/**
 	 * constructor to throw exception with stack trace
-	 * @param e
+	 * @param throwable exception that was caught
 	 */
 	public DatabaseException(Throwable e) {
 		//calls parent class constructor

@@ -21,7 +21,7 @@ public class UserBusinessService implements UserBusinessInterface {
 	
 	/**
 	 * business method to ask the data service to create a user in the database
-	 * @param user 
+	 * @param new user with needed attributes
 	 * @return true, if successful; false, if unsuccessful
 	 */
 	//create a new user
@@ -33,7 +33,7 @@ public class UserBusinessService implements UserBusinessInterface {
 	
 	/**
 	 * business method to ask the data service to find a user in the database
-	 * @param user 
+	 * @param returning user with matching username and password
 	 * @return user
 	 */
 	//find user (used for login)
@@ -45,8 +45,8 @@ public class UserBusinessService implements UserBusinessInterface {
 	
 	/**
 	 * business method to ask the data service to edit a user in the database
-	 * @param user id
-	 * @param user
+	 * @param id of user to be edited
+	 * @param user with the edited attributes
 	 * @return true, if successful; false, if unsuccessful
 	 */
 	//update user info
@@ -56,7 +56,7 @@ public class UserBusinessService implements UserBusinessInterface {
 	
 	/**
 	 * business method to ask the data service to delete a user in the database
-	 * @param user id
+	 * @param id of user to be deleted
 	 * @return true, if successful; false, if unsuccessful
 	 */
 	//delete user
