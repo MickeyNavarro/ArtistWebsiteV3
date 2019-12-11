@@ -3,13 +3,12 @@ This is an artist website made for CST341. We are coding in Java and using the S
 
 This website is created by Almicke "Mickey" Navarro and Emily Quevedo. We are both currently juniors at Grand Canyon University. We are also Computer Programming majors.
 
-We are currently on Milestone 7. This Milestone requires us to make our app responsive.
-  Through that, we have created...
-
-  Model: User, Event
-  
-  View: homePage, loginPage, registrationPage, createEventPage, adminEventsPage, editEventPage
-  
-  Controller: UserController, EventController
-  
-With the use of these pages, we have created these login, registration, user CRUD and event CRUD modules.
+This project is currently finished. Through this project we were able to ... 
+1. Implement login/registration modules
+2. Implement Event CRUD modules 
+3. Refactor our classes to use Spring JDBC
+4. Understand how to create & build a Maven project
+5. Implement JQuery components
+6. Integrating Bootstrap to help with app responsiveness 
+7. Understand the usage of JavaDoc
+8. Research about Open Source
