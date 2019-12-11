@@ -1,5 +1,5 @@
 <!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<div class="w3-content" style="max-width:2000px;margin-top:46px;cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;">
 
   <!-- Group Image -->
   <div class="w3-white">
