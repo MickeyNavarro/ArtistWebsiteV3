@@ -4,7 +4,7 @@
 		$.ajax(
 		{
 			type: "GET",
-			url: "/WebsiteV4/service/events", dataType: "json", success: function(data) {
+			url: "/ArtistWebsiteV3/service/events", dataType: "json", success: function(data) {
 				$('#events').dataTable({
 					"responsive":true,
 					"data": data,

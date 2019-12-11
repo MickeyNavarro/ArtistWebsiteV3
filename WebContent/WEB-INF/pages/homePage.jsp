@@ -1,5 +1,5 @@
 <!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<div class="w3-content" style="max-width:2000px;margin-top:46px;cursor: url(http://www.rw-designer.com/cursor-extern.php?id=106419), auto;">
 
   <!-- Group Image -->
   <div class="w3-white">
@@ -47,7 +47,7 @@
     <p class="w3-opacity"><i>Ready Go Crew</i></p>
     <p class="w3-justify">RGO crew is a collective of different Asian-American artists with different genres, including Rap, Hip Hop, & Pop. 
     Each artist reside in Arizona and their music is directly influenced by their culture and roots. The leader/producer of the group 
-    is Jason Kay. He is the one responsible for bringing RGO Crew together and for building them into who they are today. </p>
+    is Jason Kay. He is the one responsible for bringing RGO Crew together and for building them into who they are today. The members include JASN, Jun2, Nick Yu, Lil Bae, Wifi Wifey, Bahksang, and almicke.</p>
     <div class="w3-row w3-padding-32">
         <div class="row">
             <div class="col-md-6">
@@ -57,7 +57,7 @@
                </div>
             </div>
             <div class="col-md-6">
-                <p>GUNDY</p>
+                <p>Jun2</p>
             <div class="demo-content">
         <img src="resources/gundy.jpg" class="w3-round w3-margin-bottom" alt="Gundy" style="width:90%">
                </div>
