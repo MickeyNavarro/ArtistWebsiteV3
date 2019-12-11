@@ -9,7 +9,7 @@
 					"responsive":true,
 					"data": data,
 					"columns": [{"data": "name"}, {"data": "type"}, {"data": "location"}, {"data": "time"}, {"data": "date"}, {
-		                "defaultContent": "<button>Buy</button>"}] 
+		                "defaultContent": "<a href='https://web.livenation.com/'><button>Buy</button></a>"}] 
 				});
 			},
 		error: function(xhr, ajaxOptions, thrownError) 
